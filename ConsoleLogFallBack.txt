@@ -9,3 +9,9 @@ if (!window.console) {
 ou
 
 if (!window.console){ console = {log: function() {}} };
+
+ou
+
+if (typeof console === "undefined") {
+    this.console = { log: function () { } };
+}

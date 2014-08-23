@@ -1,0 +1,27 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;}
+\margl1440\margr1440\vieww16360\viewh13520\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs26 \cf2 \cb3 if (!Array.prototype.indexOf) \{\
+\'a0 \'a0 \'a0 \'a0 Array.prototype.indexOf = function (elt /*, from*/) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var len = this.length >>> 0;\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 var from = Number(arguments[1]) || 0;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 from = (from < 0)\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0? Math.ceil(from)\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0: Math.floor(from);\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (from < 0)\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 from += len;\
+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 for (; from < len; from++) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 if (from in this &&\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 this[from] === elt)\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return from;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 return -1;\
+\'a0 \'a0 \'a0 \'a0 \};\
+\'a0 \'a0 \}\
+}
