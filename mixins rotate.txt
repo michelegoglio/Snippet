@@ -1,10 +1,10 @@
 .mixins-rotate(@degrees,@m11,@m12,@m21,@m22){
--moz-transform: rotate(@degrees);
--webkit-transform: rotate(@degrees);
--o-transform: rotate(@degrees);
--ms-transform: rotate(@degrees);
-transform: rotate(@degrees);
--ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand')";filter: progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand');
+  -moz-transform: rotate(@degrees);
+  -webkit-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand')";filter:      progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand');
 
 }
 
