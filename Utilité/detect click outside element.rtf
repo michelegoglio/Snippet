@@ -1,0 +1,17 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs26 \cf2 \cb3 function detectClickOutsideElement() \{\
+\'a0	$("body").click(function(e) \{\
+\'a0		if( $("TSTooltip").hasClass("active"))\{\
+	 \'a0 \'a0	if (!(e.target == "TSTooltipTrigger" || $(e.target).parents("TSTooltipTrigger").size())) \{\'a0\
+	 \'a0 \'a0 \'a0 \'a0 \'a0 $("TSTooltip").removeClass("active");\
+	 \'a0 \'a0 \'a0 \'a0\}\
+\'a0		\}\
+\'a0 \'a0 \});\
+\}\
+}
