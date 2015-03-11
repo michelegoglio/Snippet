@@ -1,3 +1,14 @@
+.mixin-background-opacity(@r,@v,@b,@opacity,@defaultColor) {
+	background-color: @defaultColor;
+    background: rgba(@r,@v,@b,@opacity);
+}
+
+.mixins-box-sizing(){
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 .mixins-tap-highlight(@col1,@col2,@col3,@opacity){
   -webkit-tap-highlight-color: rgba(@col1,@col2,@col3,@opacity);
 	-webkit-tap-highlight-color: transparent;
@@ -31,6 +42,31 @@
 	-webkit-border-bottom-right-radius: @string;
 	-moz-border-bottom-right-radius: @string;
 	border-bottom-right-radius: @string;	
+}
+
+.mixins-placeholder{
+	::-webkit-input-placeholder { /* WebKit browsers */
+		color:@color-border;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:@color-border;
+	   opacity:1;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:@color-border;
+	   opacity:1;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+	   color:@color-border;
+	}
+}
+
+.mixins-slide-animation(@duration){
+    -webkit-transition: left @duration;
+    -moz-transition: left @duration;
+    -o-transition: left @duration;
+    -ms-transition: left @duration;
+    transition: left @duration;
 }
 
 .mixins-transition-duration(@duration){
@@ -94,6 +130,27 @@
 	-moz-transition:all cubic-bezier(@p1,@p2,@p3,@p4) @duration;
   -o-transition:all cubic-bezier(@p1,@p2,@p3,@p4) @duration;
   transition:all cubic-bezier(@p1,@p2,@p3,@p4) @duration;
+}
+
+.mixin-transition-3d(@x,@y,@z,@duration,@val1,@val2,@val3,@opacity) {
+    -webkit-transform: translate3d(@x, @y, @z);
+    opacity: @opacity;
+    -webkit-transition: -webkit-transform @duration cubic-bezier(@val1, @val2, @val3, @opacity), opacity;
+    transition: -webkit-transform @duration cubic-bezier(@val1,@val2, @val3, @opacity), opacity;
+}
+
+.mixin-transition-visibility(@opacity,@visibility,@duration) {
+    opacity: @opacity;
+    visibility: hidden;
+    -webkit-transition: visibility @visibility linear @duration,opacity @duration linear;
+    -moz-transition: visibility @visibility linear @duration,opacity @duration linear;
+    -o-transition: visibility @visibility linear @duration,opacity @duration linear;
+    transition: visibility @visibility linear @duration,opacity @duration linear;
+}
+
+.mixins-turnOff-webkitAppearance(){
+	-webkit-appearance: none;
+	border-radius: 0;
 }
 
 .mixins-ellipsis(@width){
