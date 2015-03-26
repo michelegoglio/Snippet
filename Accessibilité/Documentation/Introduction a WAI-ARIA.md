@@ -1,19 +1,31 @@
 # Introduction à WAI ARIA (traduction)
  
 L’article qui suit est la traduction de l’article « Introduction to WAI ARIA« , publié parGez Lemon sur Dev Opera, le site d’Opera Software destiné aux développeurs.
+
 Gez Lemon est un expert reconnu de l’accessibilité web. Il est membre du WaSP (Accessibility Task Force ) et travaille pour The Paciello Group, entreprise de conseil spécialisée dans l’accessibilité web.
+
 Cette traduction, comme l’article original, est placée sous licence Creative Commons by-nc-sa 2.5.
+
 Cet article est destiné à des personnes ne connaissant pas ARIA. Vous devriez avoir une bonne connaissance du langage HTML et des problèmes que peuvent rencontrer les personnes handicapées sur le web. Connaître quelques application web « riches » (RIA) d’un point de vue utilisateur serait un plus.
+
 Après avoir lu cet article, vous comprendrez à quoi sert ARIA, comment l’intégrer à vos sites, et comment l’utiliser dès immédiatement et même sur le plus simple des sites pour le rendre plus accessible.
 
 ##Introduction
 Le langage HTML (HyperText Markup Language) n’a pas été conçu pour créer des applications web. Le nombre de contrôles (bouton, case à cocher, etc.) qu’il propose est limité, et il est basé sur une communication client / serveur séquentielle. Les développeurs d’applications web ont contourné ces limitations en créant leurs propres widgets (contrôles graphiques) associés à Javascript pour leur ajouter le comportement désiré.
+
 Malheureusement, les techniques utilisées pour outrepasser ces limitations ne sont absolument pas accessibles. Bien que ces widgets ressemblent à ceux d’une application bureau classique comme la représentation d’une arborescence (tree view), le rôle (ce que le widget fait), l’état (sa configuration, comme « checked » pour une case à cocher), et d’autres informations importantes ne sont pas disponibles pour les technologies d’assistance (comme les lecteurs d’écran). Ce serait comme styler une ligne de texte pour qu’elle ressemble à un titre, sans utiliser un élément définissant un titre (h1 à h6). Le texte ressemble à un titre, mais les technologies d’assistance n’ont pas accès à cette information.
+
 Les mises à jour sont souvent mal perçues par les personnes utilisant une technologie d’assistance. Ces outils s’attendent à ce que le contenu change lors d’un événement de navigation « classique », comme un clic sur un lien ou un envoi de formulaire. Les applications web utilisent des techniques comme AJAX pour mettre à jour le contenu en arrière plan, ce qui peut passer inaperçu pour les technologies d’assistance. Si elles sont tout de même informées de ces mises à jour, l’utilisateur n’est pas pour autant informé que le contenu à été mis à jour, et n’a aucun moyen de localiser la zone mise à jour.
+
 WAI-ARIA est une spécification qui propose la possibilité de définir une description des rôles, des états et des propriétés pour les widgets personnalisés, de manière à ce qu’ils soient reconnaissables et utilisables par les utilisateurs de technologies d’assistance. WAI-ARIA propose également un système permettant de s’assurer qu’un utilisateur de technologie d’assistance est informé des mises à jour de l’application.
 Petit historique du langage HTML
-Le langage HTML a été conçu pour être un système hypertexte, permettant de structurer et de partager des documents liés entre eux. Les premiers brouillons de la spécification HTML définissaient des balises comme des titres, des paragraphes, des listes, ou des ancres, pour ajouter une structure à des documents texte. La première proposition d’une spécification HTML par l’IETF incluait l’élément img, permettant d’ajouter des images à l’intérieur du document. La première spécification formelle fût HTML 2, basée sur les premiers brouillons de HTML. Cette spécification a défini les formulaires, ainsi que quelques composants d’interface permettant de créer des zones éditables, des boutons, des cases à cocher, des boutons radio, et des menus déroulants. Le petit ensemble de de contrôles définis dans HTML 2 n’a quasiment pas changé jusqu’à HTML 4.01, que nous utilisons actuellement.
+
+Le langage HTML a été conçu pour être un système hypertexte, permettant de structurer et de partager des documents liés entre eux. Les premiers brouillons de la spécification HTML définissaient des balises comme des titres, des paragraphes, des listes, ou des ancres, pour ajouter une structure à des documents texte. La première proposition d’une spécification HTML par l’IETF incluait l’élément img, permettant d’ajouter des images à l’intérieur du document. 
+
+La première spécification formelle fût HTML 2, basée sur les premiers brouillons de HTML. Cette spécification a défini les formulaires, ainsi que quelques composants d’interface permettant de créer des zones éditables, des boutons, des cases à cocher, des boutons radio, et des menus déroulants. Le petit ensemble de de contrôles définis dans HTML 2 n’a quasiment pas changé jusqu’à HTML 4.01, que nous utilisons actuellement.
+
 Le modèle de communication de HTML est basé sur un modèle client / serveur : le client envoie des requêtes et reçoit des réponses ; Le serveur web attend les requêtes, les traite, puis renvoie une réponse au client. Puisque HTML ne définit pas de gestion de comportement, la communication est séquentielle : le client demande une page au serveur, le serveur traite la requête et renvoie une page au client.
+
 Applications web
 Les applications web essaient d’imiter les applications bureau classiques, mais ces applications web sont elles-mêmes exécutées à l’intérieur d’une application bureau : le navigateur. Il existe deux différences fondamentales entre HTML, avec son modèle de communication, et une application de bureau traditionnelle :
 *	Les applications de bureau possèdent une couche de comportement qui ne repose pas sur des requêtes serveur.
@@ -151,7 +163,9 @@ Pour un utilisateur de lecteur d’écran, il est très difficile de comprendre 
 
 `off`
 Il s’agit de la valeur par défaut, indiquant que la zone ne sera pas mise à jour.
+```
 <ul aria-live="off">
+```
 
 `polite`
 C’est une notification normale, le comportement généralement attendu d’une Live Region. La valeur polite indique qu’il n’est pas nécessaire d’y répondre tant que l’utilisateur n’a pas terminé ce qu’il est actuellement en train de faire.
