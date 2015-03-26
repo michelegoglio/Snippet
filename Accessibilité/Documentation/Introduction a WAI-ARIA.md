@@ -1,4 +1,4 @@
-Introduction à WAI ARIA (traduction)
+# Introduction à WAI ARIA (traduction)
  
 L’article qui suit est la traduction de l’article « Introduction to WAI ARIA« , publié parGez Lemon sur Dev Opera, le site d’Opera Software destiné aux développeurs.
 Gez Lemon est un expert reconnu de l’accessibilité web. Il est membre du WaSP (Accessibility Task Force ) et travaille pour The Paciello Group, entreprise de conseil spécialisée dans l’accessibilité web.
@@ -6,7 +6,7 @@ Cette traduction, comme l’article original, est placée sous licence Creative 
 Cet article est destiné à des personnes ne connaissant pas ARIA. Vous devriez avoir une bonne connaissance du langage HTML et des problèmes que peuvent rencontrer les personnes handicapées sur le web. Connaître quelques application web « riches » (RIA) d’un point de vue utilisateur serait un plus.
 Après avoir lu cet article, vous comprendrez à quoi sert ARIA, comment l’intégrer à vos sites, et comment l’utiliser dès immédiatement et même sur le plus simple des sites pour le rendre plus accessible.
 
-Introduction
+##Introduction
 Le langage HTML (HyperText Markup Language) n’a pas été conçu pour créer des applications web. Le nombre de contrôles (bouton, case à cocher, etc.) qu’il propose est limité, et il est basé sur une communication client / serveur séquentielle. Les développeurs d’applications web ont contourné ces limitations en créant leurs propres widgets (contrôles graphiques) associés à Javascript pour leur ajouter le comportement désiré.
 Malheureusement, les techniques utilisées pour outrepasser ces limitations ne sont absolument pas accessibles. Bien que ces widgets ressemblent à ceux d’une application bureau classique comme la représentation d’une arborescence (tree view), le rôle (ce que le widget fait), l’état (sa configuration, comme « checked » pour une case à cocher), et d’autres informations importantes ne sont pas disponibles pour les technologies d’assistance (comme les lecteurs d’écran). Ce serait comme styler une ligne de texte pour qu’elle ressemble à un titre, sans utiliser un élément définissant un titre (h1 à h6). Le texte ressemble à un titre, mais les technologies d’assistance n’ont pas accès à cette information.
 Les mises à jour sont souvent mal perçues par les personnes utilisant une technologie d’assistance. Ces outils s’attendent à ce que le contenu change lors d’un événement de navigation « classique », comme un clic sur un lien ou un envoi de formulaire. Les applications web utilisent des techniques comme AJAX pour mettre à jour le contenu en arrière plan, ce qui peut passer inaperçu pour les technologies d’assistance. Si elles sont tout de même informées de ces mises à jour, l’utilisateur n’est pas pour autant informé que le contenu à été mis à jour, et n’a aucun moyen de localiser la zone mise à jour.
@@ -16,10 +16,10 @@ Le langage HTML a été conçu pour être un système hypertexte, permettant de 
 Le modèle de communication de HTML est basé sur un modèle client / serveur : le client envoie des requêtes et reçoit des réponses ; Le serveur web attend les requêtes, les traite, puis renvoie une réponse au client. Puisque HTML ne définit pas de gestion de comportement, la communication est séquentielle : le client demande une page au serveur, le serveur traite la requête et renvoie une page au client.
 Applications web
 Les applications web essaient d’imiter les applications bureau classiques, mais ces applications web sont elles-mêmes exécutées à l’intérieur d’une application bureau : le navigateur. Il existe deux différences fondamentales entre HTML, avec son modèle de communication, et une application de bureau traditionnelle :
-•	Les applications de bureau possèdent une couche de comportement qui ne repose pas sur des requêtes serveur.
-•	Les applications de bureau possèdent un nombre bien plus élevé de widgets.
+*	Les applications de bureau possèdent une couche de comportement qui ne repose pas sur des requêtes serveur.
+*	Les applications de bureau possèdent un nombre bien plus élevé de widgets.
 
-Reproduction d’applications bureau
+##Reproduction d’applications bureau
 Requêtes serveur en arrière plan
 Pour simuler les applications bureau classiques, les applications web utilisent Javascript pour la partie comportement. Javascript peut par exemple être utilisé pour ouvrir et refermer un élément de menu lorsque l’utilisateur intéragit avec l’élément. Des données doivent parfois être récupérées sur le serveur : l’application peut par exemple récupérer des enregistrement dans une base de données pour mettre à jour des informations sur la page. Lorsque l’application doit interagir avec le serveur, des techniques comme AJAX ou un élément IFrame masqué sont utilisés pour communiquer de manière transparente avec le serveur.
 Reproduire des composants riches (widgets)
@@ -27,45 +27,45 @@ Puisque HTML propose très peu de widgets (ndt : dans la suite de l’article, c
 
 Problèmes d’accessibilité avec la reproduction de composants natifs
 Visuellement, créer des contrôles riches et effectuer des requêtes serveur en arrière plan permet de créer une meilleure expérience utilisateur. Malheureusement, ces techniques posent de graves problèmes d’accessibilité pour les utilisateurs de technologies d’assistance, comme les lecteurs d’écran.
-•	Les composants créés de cette manière sont rarement accessibles au clavier.
-•	Le rôle d’un composant, « ce qu’il fait », n’est pas accessible aux technologies d’assistance.
-•	Les états et propriétés d’un composant ne sont pas accessibles aux technologies d’assistance.
-•	Les mises à jour ne sont pas signalées aux technologies d’assistance.
+*	Les composants créés de cette manière sont rarement accessibles au clavier.
+*	Le rôle d’un composant, « ce qu’il fait », n’est pas accessible aux technologies d’assistance.
+*	Les états et propriétés d’un composant ne sont pas accessibles aux technologies d’assistance.
+*	Les mises à jour ne sont pas signalées aux technologies d’assistance.
 
-WAI-ARIA à la rescousse
+## WAI-ARIA à la rescousse
 Tous les problèmes listés ci-dessus sont résolus par la specification WAI-ARIA (qui sera abrégée ARIA jusqu’à la fin de cet article) : Web Accessibility Initiative’sAccessible Rich Internet Applications. ARIA est une technologie positive : plutôt que de dire aux développeurs ce qu’ils ne peuvent pas faire, elle leur propose simplement de créer des applications web riches. ARIA est de plus une technologie très facile à implémenter.
 
-Navigation au clavier
+## Navigation au clavier
 En plus de proposer une alternative aux éléments non-textuels, permettre d’interagir avec les contrôles d’interface à l’aide du clavier fait partie du minimum à mettre en place pour rendre un système plus accessible. Un développeur sensibilisé à l’accessibilité devrait réaliser des widgets dont les éléments permettent de recevoir le focus, tout comme le fait par défaut un élément input de type image (<input type="image" ...>). Malheureusement, la plupart des widgets ne sont pas réalisés de cette manière : ils utilisent plutôt des éléments comme img, ou peuvent être composés de plusieurs éléments placés dans un conteneur div qui ne reçoit pas le focus.
 L’attribut tabindex est arrivé avec HTML4, utilisable sur les éléments suivants : a, area, button, input, object, select, et textarea. Cet attribut accepte un nombre positif compris entre 0 et 32767. La navigation commence avec les éléments ayant la plus petite valeur tabindex, et se poursuit jusqu’à l’élément ayant la valeur la plus élevée. Les éléments ayant pour valeur 0 sont visités dans leur ordre naturel d’apparition dans le code. Si le document a une structure logique, l’attribut tabindex n’est pas requis car les éléments d’interface sont naturellement définis dans l’ordre de tabulation.
 ARIA étend l’attribut tabindex, lui permettant d’être utilisé sur tous les éléments visibles. ARIA autorise également l’utilisation d’une valeur négative pour les éléments ne devant pas être proposés à la navigation au clavier, mais pouvant recevoir le focus par programmation. Bien que la valeur d’un attribut tabindex négatif n’aie pas d’importance (l’élément ne pourra jamais recevoir le focus au clavier), la valeur -1 est couramment utilisée lorsqu’un élément ne doit pas recevoir le focus au clavier, mais uniquement par programmation.
 Par exemple, vous pourriez réaliser un menu dont l’élément conteneur est accessible à l’aide de la tabulation clavier, mais pas les éléments qu’il contient. Ces éléments peuvent alors être programmés pour être parcourus à l’aide des touches fléchées du clavier. Ainsi, les utilisateur n’ont pas à utiliser la touche tabulation sur chacun des éléments du menu, ce qui leur permet de mieux accéder au document. C’est vrai pour tous les widgets ayant une série de composants nécessitant un accès au clavier, comme la représentation d’une arborescence.
 Ajouter un élément à l’ordre naturel des tabulations
 L’exemple suivant affecte la valeur 0 à l’attribut tabindex pour placer l’élément divdans l’ordre des tabulations, ce qui permettra d’y accéder à l’aide de la navigation clavier.
-
+```
 <div tabindex="0">
 ...
 </div>
-
+```
 Tabindex négatif
 L’exemple suivant utilise un tabindex d’une valeur négative, cet élément pourra alors recevoir le focus par programmation.
-
+```
 <div id="progaccess" tabindex="-1">
 ...
 </div>
-
+```
 Dans cet exemple, l’élément div n’est pas placé dans l’ordre des tabulations, mais possède un attribut tabindex d’une valeur de -1. Le script qui suit sélectionne l’élément précédemment défini et utilise la méthode focus() pour activer le focus sur cet élément.
-
+```
 var objDiv = document.getElementById('progaccess');
 // Focus on the element
 objDiv.focus();
-
+```
 
 Que suis-je ?
 ARIA propose l’attribut role pour définir les widgets, comme un bouton glissant (slider), ou définir la structure de la page, comme un menu. Un problème majeur des applications web est que n’importe quel élément peut être utilisé pour créer un widget. Les éléments HTML possèdent déjà des rôles prédéfinis. Le rôle d’un élément est « ce qu’il fait » – le rôle qu’il a dans la structure. Par exemple, le rôle des titres est bien compris par les technologies d’assistances. Lorsque des widgets sont réalisés à partir d’éléments existants, le rôle d’un élément est ce que la technologie d’assistance définit plutôt que ce qu’il représente visuellement en tant que widget. Par exemple, si le visuel d’un slider est créé en utilisant un élément img avec un texte alternatif approprié, un lecteur d’écran pourrait annoncer le contrôle comme ceci : « Image d’un slider », plutôt que quelque chose de plus intéressant, comme « Bouton glissant, 16 pour cents ».
 
 Le rôle donné par l’attribut role prend le pas sur le rôle natif de l’élément. Dans l’exemple suivant, un élément input possède un attribut role dont la valeur est slider (nous verrons d’autres propriétés ARIA plus loin dans cet article) — le rôle indiqué à la technologie d’assistance est slider (bouton glissant), plutôt que input(entrée utilisateur).
-
+```
 <input type="image" src="thumb.gif"
 alt="Effectiveness"
 role="slider"
@@ -74,7 +74,7 @@ aria-valuemax="100"
 aria-valuenow="42"
 aria-valuetext="42 percent"
 aria-labelledby="leffective">
-
+```
 Lorsque le focus est placé sur cet élément, un utilisateur de lecteur d’écran comprend ce que fait ce widget. La spécification ARIA propose une liste de rôles.
 
 Rôle des sections du document (document landmark roles)
@@ -96,6 +96,7 @@ Contient des liens pour naviguer dans ou en dehors du document.
 search
 Cette section contient un formulaire de recherche permettant de chercher sur le site.
 Les exemples suivants utilisent les rôles banner, navigation et main pour définir la structure de la page visible sur la figure 4.
+```
 <div role="banner">
 ...
 </div>
@@ -105,31 +106,31 @@ Les exemples suivants utilisent les rôles banner, navigation et main pour défi
 <div role="main">
 ...
 </div>
+```
 
-
-États et propriétés d’ARIA
+## États et propriétés d’ARIA
 Les états (states) et propriétés (properties) d’ARIA permettent de décrire des informations supplémentaires sur les widgets et de les mettre à la disposition des technologies d’assistance, afin d’aider l’utilisateur à comprendre comment intéragir avec le widget. L’état définit une configuration ou une information unique sur un objet. Par exemple, la propriété aria-checked possède trois valeurs pour définir ses états : true, false et mixed.
 Dans l’exemple du bouton glissant vu un peu plus haut, nous avons inclus différentes propriétés que nous allons voir ci-dessous, aidant à décrire un widget à une technologie d’assistance.
 
-aria-valuemin
+`aria-valuemin`
 Stocke la valeur minimale qu’un bouton glissant peut avoir.
 
-aria-valuemax
+`aria-valuemax`
 Stocke la valeur maximale qu’il peut avoir.
 
-aria-valuenow
+`aria-valuenow`
 Stocke la valeur actuelle.
 
-aria-valuetext
+`aria-valuetext`
 Stocke du texte lisible permettant à l’utilisateur de comprendre le contexte. "30 dollars", par exemple.
 
-aria-labelledby
+`aria-labelledby`
 Stocke l’identifiant (attribut id) d’un élément contenant une description appropriée du widget.
 Certaines propriétés peuvent être modifiées par programmation. Dans l’exemple suivant, les propriétés arial-valuenow et arial-valuetext de notre widget de bouton glissant sont mises à jour lorsque le bouton change de position :
 // Définit les valeurs des propriétés ARIA
 // lorsque le bouton change de position
-objThumb.setAttribute('aria-valuenow', iValue);
-objThumb.setAttribute('aria-valuetext', iValue + ' %');
+```objThumb.setAttribute('aria-valuenow', iValue);
+objThumb.setAttribute('aria-valuetext', iValue + ' %');```
 
 Ajouter des rôles et attributs ARIA ne sera pas valide HTML 4.01 ou XHTML1.0, mais rassurez-vous, ARIA ne fait qu’ajouter des informations importantes à des spécifications écrites depuis un bon moment maintenant. Des travaux sont en cours pour définir une DTD pouvant être utilisée avec du XML modulaire, comme XHTML1.1. La spécification ARIA fournit une liste complète des états et propriétés permettant de définir des widgets accessibles.
 
@@ -138,57 +139,57 @@ Les « Live Regions » (zones mises à jour)
 Les Live Regions permettent à certains éléments du document d’annoncer qu’ils ont été mis à jour, sans que l’utilisateur ne soit dérangé dans son activité. Cela signifie que les utilisateurs vont pouvoir être informés des mises à jour sans modifier leur position dans le contenu. Par exemple, une application de chat pourrait signaler une réponse de la personne avec qui l’utilisateur est en train de discuter, sans être déplacé en-dehors du champ permettant d’envoyer un nouveau message à la personne.
 aria-live
 Pour un utilisateur de lecteur d’écran, il est très difficile de comprendre ce qui a été mis à jour sur une page. ARIA propose la propriété aria-live, dont la valeur indique l’importance des mises à jour de la région. Voici les différents niveaux d’alerte pouvant être utilisés avec la propriété aria-live :
-off
+`off`
 Il s’agit de la valeur par défaut, indiquant que la zone ne sera pas mise à jour.
 <ul aria-live="off">
 
-polite
+`polite`
 C’est une notification normale, le comportement généralement attendu d’une Live Region. La valeur polite indique qu’il n’est pas nécessaire d’y répondre tant que l’utilisateur n’a pas terminé ce qu’il est actuellement en train de faire.
 <ul aria-live="polite">
 
-assertive
+`assertive`
 Ce niveau d’alerte est plus élevé que la normale, mais n’interrompt pas nécessairement l’utilisateur.
 <ul aria-live="assertive">
 
-rude
+`rude`
 Cette valeur est la plus élevée, et interrompt l’utilisateur pour lui notifier la mise à jour. Il peut s’en trouver désorienté, et peut empêcher l’utilisateur de reprendre la tâche qu’il effectuait. Elle ne devrait être utilisée qu’en cas d’absolue nécessité.
-<ul aria-live="rude">
+`<ul aria-live="rude">`
 
 Quelques autres propriétés peuvent être utilisées lorsqu’une Live Region est créée, en voici la liste.
-La propriété aria-atomic
+La propriété `aria-atomic`
 
-aria-atomic est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie).
+`aria-atomic` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie).
 Lorsque la zone est mis à jour, la propriété aria-atomic permet à la technologie d’assistance de savoir si elle doit décrire à l’utilisateur la zone entière ou seulement la partie ayant été mise à jour. Si cette propriété est définie à true, la technologie d’assistance devrait décrire complètement la zone. Si sa valeur est false, seule la partie mise à jour devrait être annoncée.
 Dans l’exemple suivant, tous les éléments de la liste non-ordonnée seront annoncés à l’utilisateur, à moins qu’un de ces éléments ne surcharge la propriété aria-atomic.
-<ul aria-atomic="true"
-aria-live="polite">
+```<ul aria-atomic="true"
+aria-live="polite">```
 
-La propriété aria-busy
-aria-busy est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie). Si plusieurs parties d’une Live Region ont besoin d’être chargées avant que la mise à jour ne soit annoncée à l’utilisateur, la propriété aria-busy peut être définie à true jusqu’à ce que la dernière partie soit chargée, puis à false lorsque la mise à jour est complètement terminée. Cette propriété empêche les technologies d’assistance d’annoncer un changement avant qu’une mise à jour ne soit complétée.
-<ul aria-atomic="true"
+La propriété `aria-busy`
+`aria-busy` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie). Si plusieurs parties d’une Live Region ont besoin d’être chargées avant que la mise à jour ne soit annoncée à l’utilisateur, la propriété aria-busy peut être définie à true jusqu’à ce que la dernière partie soit chargée, puis à false lorsque la mise à jour est complètement terminée. Cette propriété empêche les technologies d’assistance d’annoncer un changement avant qu’une mise à jour ne soit complétée.
+```<ul aria-atomic="true"
 aria-busy="true"
-aria-live="polite">
+aria-live="polite">```
 
-La propriété aria-channel
-aria-channel est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou notify. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une plage Braille (ndt: lien ajouté). Si un seul canal est disponible, main et notify utiliseront tous deux le même canal. Le canal notify a une priorité plus élevée que le canal main.
-<ul aria-atomic="true"
+La propriété `aria-channel`
+`aria-channel` est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou notify. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une plage Braille (ndt: lien ajouté). Si un seul canal est disponible, main et notify utiliseront tous deux le même canal. Le canal notify a une priorité plus élevée que le canal main.
+```<ul aria-atomic="true"
 aria-channel="notify"
-aria-live="polite">
+aria-live="polite">```
 
-La propriété aria-relevant
-aria-revelant est une propriété optionnelle des Live Regions indiquant quels types de changements sont considérés comme significatifs à l’intérieur d’une zone (ajout d’un élément, suppression d’un élément et modification de texte). Cette propriété accepte une ou plusieurs des valeurs suivantes, séparées par des espaces :
-additions
+La propriété `aria-relevant`
+`aria-revelant` est une propriété optionnelle des Live Regions indiquant quels types de changements sont considérés comme significatifs à l’intérieur d’une zone (ajout d’un élément, suppression d’un élément et modification de texte). Cette propriété accepte une ou plusieurs des valeurs suivantes, séparées par des espaces :
+* additions
 Des noeuds sont ajoutés au DOM à l’intérieur de la zone.
-removals
+* removals
 Des noeuds sont supprimés du DOM à l’intérieur de la zone.
-text
+* text
 Du texte est ajouté ou supprimé du DOM (modification de texte).
-all
+* all
 Toutes les valeurs définies précédemment (additions, removals, text) s’appliquent à la zone.
 En l’absence de la propriété aria-revelant, le comportement par défaut considère que les modifications significatives sont les modifications de texte et les ajouts de noeuds (aria-revelant="text additions"). L’exemple suivant n’annoncera des changements que si des noeuds sont ajoutés à la région. Si des modifications de texte surviennent ou que des noeuds sont supprimés, l’utilisateur n’en sera pas averti.
-<ul aria-relevant="additions"
+```<ul aria-relevant="additions"
 aria-atomic="true"
-aria-live="polite">
+aria-live="polite">```
 
 
 Quand pourrons nous utiliser ARIA ?
