@@ -80,22 +80,26 @@ Lorsque le focus est placé sur cet élément, un utilisateur de lecteur d’éc
 Rôle des sections du document (document landmark roles)
 Les rôles que nous venons de voir permettent de décrire des widgets, mais il existe également des rôles permettant de décrire la structure du document. Les document landmarks (ou description des zones) sont un sous-ensemble des rôles classiques permettant aux utilisateurs de lecteurs d’écran de comprendre le rôle d’une zone pour mieux s’orienter dans le document.
 ARIA définit les rôles de document landmarks (zones du document) suivants :
-article
+`article`
 Contenu ayant du sens par lui-même, comme un article ou un commentaire de blog, un message sur un forum, etc.
-banner
+`banner`
 Contenu à propos du site, comme le titre de la page ou le logo.
-complementary
+`complementary`
 Permet éventuellement de définir une partie du contenu principal, mais est plus approprié pour du contenu séparé : la météo sur un portail web par exemple.
 
-contentinfo
-Contenu dépendant d’un autre, comme des notes de bas de page, un copyright, un lien vers la déclaration de confidentialité, un lien vers les paramètres de l’application, etc.
-main
+`contentinfo`
+Contenu dépendant d’un autre, comme des notes de bas de page, un copyright, un lien vers la déclaration de confidentialité, un lien vers les paramètres de l’application, etc.`
+
+`main`
 Contenu directement lié ou englobant le contenu central du document.
-navigation
+
+`navigation`
 Contient des liens pour naviguer dans ou en dehors du document.
-search
+
+`search`
 Cette section contient un formulaire de recherche permettant de chercher sur le site.
 Les exemples suivants utilisent les rôles banner, navigation et main pour définir la structure de la page visible sur la figure 4.
+
 ```
 <div role="banner">
 ...
@@ -109,6 +113,7 @@ Les exemples suivants utilisent les rôles banner, navigation et main pour défi
 ```
 
 ## États et propriétés d’ARIA
+
 Les états (states) et propriétés (properties) d’ARIA permettent de décrire des informations supplémentaires sur les widgets et de les mettre à la disposition des technologies d’assistance, afin d’aider l’utilisateur à comprendre comment intéragir avec le widget. L’état définit une configuration ou une information unique sur un objet. Par exemple, la propriété aria-checked possède trois valeurs pour définir ses états : true, false et mixed.
 Dans l’exemple du bouton glissant vu un peu plus haut, nous avons inclus différentes propriétés que nous allons voir ci-dessous, aidant à décrire un widget à une technologie d’assistance.
 
@@ -129,55 +134,73 @@ Stocke l’identifiant (attribut id) d’un élément contenant une description 
 Certaines propriétés peuvent être modifiées par programmation. Dans l’exemple suivant, les propriétés arial-valuenow et arial-valuetext de notre widget de bouton glissant sont mises à jour lorsque le bouton change de position :
 // Définit les valeurs des propriétés ARIA
 // lorsque le bouton change de position
-```objThumb.setAttribute('aria-valuenow', iValue);
-objThumb.setAttribute('aria-valuetext', iValue + ' %');```
+
+```
+objThumb.setAttribute('aria-valuenow', iValue);
+objThumb.setAttribute('aria-valuetext', iValue + ' %');
+```
 
 Ajouter des rôles et attributs ARIA ne sera pas valide HTML 4.01 ou XHTML1.0, mais rassurez-vous, ARIA ne fait qu’ajouter des informations importantes à des spécifications écrites depuis un bon moment maintenant. Des travaux sont en cours pour définir une DTD pouvant être utilisée avec du XML modulaire, comme XHTML1.1. La spécification ARIA fournit une liste complète des états et propriétés permettant de définir des widgets accessibles.
 
 
 Les « Live Regions » (zones mises à jour)
 Les Live Regions permettent à certains éléments du document d’annoncer qu’ils ont été mis à jour, sans que l’utilisateur ne soit dérangé dans son activité. Cela signifie que les utilisateurs vont pouvoir être informés des mises à jour sans modifier leur position dans le contenu. Par exemple, une application de chat pourrait signaler une réponse de la personne avec qui l’utilisateur est en train de discuter, sans être déplacé en-dehors du champ permettant d’envoyer un nouveau message à la personne.
-aria-live
+
+`aria-live`
 Pour un utilisateur de lecteur d’écran, il est très difficile de comprendre ce qui a été mis à jour sur une page. ARIA propose la propriété aria-live, dont la valeur indique l’importance des mises à jour de la région. Voici les différents niveaux d’alerte pouvant être utilisés avec la propriété aria-live :
+
 `off`
 Il s’agit de la valeur par défaut, indiquant que la zone ne sera pas mise à jour.
 <ul aria-live="off">
 
 `polite`
 C’est une notification normale, le comportement généralement attendu d’une Live Region. La valeur polite indique qu’il n’est pas nécessaire d’y répondre tant que l’utilisateur n’a pas terminé ce qu’il est actuellement en train de faire.
+```
 <ul aria-live="polite">
+```
 
 `assertive`
 Ce niveau d’alerte est plus élevé que la normale, mais n’interrompt pas nécessairement l’utilisateur.
+```
 <ul aria-live="assertive">
+```
 
 `rude`
 Cette valeur est la plus élevée, et interrompt l’utilisateur pour lui notifier la mise à jour. Il peut s’en trouver désorienté, et peut empêcher l’utilisateur de reprendre la tâche qu’il effectuait. Elle ne devrait être utilisée qu’en cas d’absolue nécessité.
-`<ul aria-live="rude">`
+```
+<ul aria-live="rude">
+```
 
 Quelques autres propriétés peuvent être utilisées lorsqu’une Live Region est créée, en voici la liste.
-La propriété `aria-atomic`
 
+La propriété `aria-atomic`
 `aria-atomic` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie).
 Lorsque la zone est mis à jour, la propriété aria-atomic permet à la technologie d’assistance de savoir si elle doit décrire à l’utilisateur la zone entière ou seulement la partie ayant été mise à jour. Si cette propriété est définie à true, la technologie d’assistance devrait décrire complètement la zone. Si sa valeur est false, seule la partie mise à jour devrait être annoncée.
 Dans l’exemple suivant, tous les éléments de la liste non-ordonnée seront annoncés à l’utilisateur, à moins qu’un de ces éléments ne surcharge la propriété aria-atomic.
-```<ul aria-atomic="true"
-aria-live="polite">```
+```
+<ul aria-atomic="true"
+aria-live="polite">
+```
 
 La propriété `aria-busy`
 `aria-busy` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie). Si plusieurs parties d’une Live Region ont besoin d’être chargées avant que la mise à jour ne soit annoncée à l’utilisateur, la propriété aria-busy peut être définie à true jusqu’à ce que la dernière partie soit chargée, puis à false lorsque la mise à jour est complètement terminée. Cette propriété empêche les technologies d’assistance d’annoncer un changement avant qu’une mise à jour ne soit complétée.
-```<ul aria-atomic="true"
+```
+<ul aria-atomic="true"
 aria-busy="true"
-aria-live="polite">```
+aria-live="polite">
+```
 
 La propriété `aria-channel`
 `aria-channel` est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou notify. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une plage Braille (ndt: lien ajouté). Si un seul canal est disponible, main et notify utiliseront tous deux le même canal. Le canal notify a une priorité plus élevée que le canal main.
-```<ul aria-atomic="true"
+```
+<ul aria-atomic="true"
 aria-channel="notify"
-aria-live="polite">```
+aria-live="polite">
+```
 
 La propriété `aria-relevant`
 `aria-revelant` est une propriété optionnelle des Live Regions indiquant quels types de changements sont considérés comme significatifs à l’intérieur d’une zone (ajout d’un élément, suppression d’un élément et modification de texte). Cette propriété accepte une ou plusieurs des valeurs suivantes, séparées par des espaces :
+
 * additions
 Des noeuds sont ajoutés au DOM à l’intérieur de la zone.
 * removals
@@ -187,9 +210,11 @@ Du texte est ajouté ou supprimé du DOM (modification de texte).
 * all
 Toutes les valeurs définies précédemment (additions, removals, text) s’appliquent à la zone.
 En l’absence de la propriété aria-revelant, le comportement par défaut considère que les modifications significatives sont les modifications de texte et les ajouts de noeuds (aria-revelant="text additions"). L’exemple suivant n’annoncera des changements que si des noeuds sont ajoutés à la région. Si des modifications de texte surviennent ou que des noeuds sont supprimés, l’utilisateur n’en sera pas averti.
-```<ul aria-relevant="additions"
+```
+<ul aria-relevant="additions"
 aria-atomic="true"
-aria-live="polite">```
+aria-live="polite">
+```
 
 
 Quand pourrons nous utiliser ARIA ?
@@ -200,7 +225,7 @@ Soyez parmi les premiers à l’utiliser
 Puisque nous venons de voir que l’utilisation d’ARIA ne provoque aucun effet de bord et que le support est déjà présent, il n’y a rien à perdre à l’utiliser dès maintenant, et beaucoup à gagner. Même si votre site web est le plus simple du monde, vous pouvez y inclure des document landmarks (rôles des sections) pour aider l’utilisateur à mieux naviguer et à s’orienter à l’intérieur du contenu.
 Utilisez les rôles de section (document landmark roles)
 Sur mon site web personnel, j’ai utilisé les rôles de zones main, navigation, search, et secondary. Prenons la structure suivante.
-
+```
 <div id="ads">
 ...
 </div>
@@ -213,9 +238,10 @@ Sur mon site web personnel, j’ai utilisé les rôles de zones main, navigation
 <div id="content">
 ...
 </div>
+```
 
 Nous pourrions écrire l’attribut role pour nos document landmarks directement dans le code HTML :
-
+```
 <div id="ads" role="banner">
 ...
 </div>
@@ -228,8 +254,10 @@ Nous pourrions écrire l’attribut role pour nos document landmarks directement
 <div id="content" role="main">
 ...
 </div>
+```
 
 Alternativement, puisque les pages sont structurées de manière à pouvoir être stylées avec CSS, la page a des chances d’être structurée à l’aide d’attributs id pouvant être passés à une fonction Javascript. L’exemple suivant est une fonction Javascript simple acceptant l’attribut id d’un élément et une valeur de role, lui permettant de définir l’attribut role de l’élément correspondant.
+```
 function addARIARole(strID, strRole)
 {
 // Find the element to add a role property to
@@ -240,8 +268,10 @@ if (objElement)
 objElement.setAttribute('role', strRole);
 }
 }
+```
 
 La fonction peut alors être appelée en passant en paramètre l’attribut id de la section et son rôle dans le document. Considérez la structure de document ci-dessous : nous pourrions utiliser cette fonction Javascript pour insérer un attribut role, plutôt que de l’écrire dans le code HTML.
+```
 function setupARIA()
 {
 // Add ARIA roles to the document
@@ -252,19 +282,24 @@ addARIARole('ads', 'banner');
 }
 
 window.onload = setupARIA;
+```
+
 Indiquer les champs requis
-Si certains de vos formulaires contiennent des champs requis, vous pouvez utiliser la propriété aria-required. Cette propriété indique qu’une entrée utilisateur est requise pour envoyer le formulaire. L’exemple suivant ajoute la propriété aria-required à un élément input classique.
+Si certains de vos formulaires contiennent des champs requis, vous pouvez utiliser la propriété `aria-required`. Cette propriété indique qu’une entrée utilisateur est requise pour envoyer le formulaire. L’exemple suivant ajoute la propriété `aria-required` à un élément input classique.
+```
 <label for="contactname">Name</label>
 <input type="text"
 id="contactname"
 name="contactname"
 size="30"
 aria-required="true">
+```
 
 Le système de blog WordPress a déjà commencé à utiliser l’attribut aria-requiredpour les champs requis du formulaire d’envoi de commentaire.
+
 Ajouter d’autres propriétés pertinentes
-Beaucoup de propriétés ARIA peuvent être utilisées sur des sites web très simples, comme aria-labelledby et aria-describedby. La propriété aria-labelledby pointe sur un ou plusieurs éléments considérés comme le libellé de l’élément, tandis que l’attribut aria-describedby pointe sur un ou plusieurs éléments considérés comme la description de l’élément.
- 
+Beaucoup de propriétés ARIA peuvent être utilisées sur des sites web très simples, comme `aria-labelledby` et `aria-describedby`. La propriété aria-labelledby pointe sur un ou plusieurs éléments considérés comme le libellé de l’élément, tandis que l’attribut aria-describedby pointe sur un ou plusieurs éléments considérés comme la description de l’élément.
+```
 <h2 id="limg">Paragliding</h2>
 <p id="dimg">
 A long description of our paragliding trip ...
@@ -276,18 +311,23 @@ alt="Getting ready to take off"
 aria-labelledby="limg"
 aria-describedby="dimg">
 </div>
+```
 
 Priorité des attributs HTML
-Les attributs ARIA ont la priorité sur le code HTML de base. C’est à dire que si aria-labelledby est utilisé parallèlement à <label for="">, seul l’attribut aria-labelledby sera pris en compte. L’élément label est toujours encouragé pour les anciens navigateurs ne supportant pas ARIA. Une technique simple pour éviter les conflits est d’utiliser l’attribut aria-labelledby pour faire référence à l’élément
+
+Les attributs ARIA ont la priorité sur le code HTML de base. C’est à dire que si aria-labelledby est utilisé parallèlement à `<label for="">`, seul l’attribut aria-labelledby sera pris en compte. L’élément label est toujours encouragé pour les anciens navigateurs ne supportant pas ARIA. Une technique simple pour éviter les conflits est d’utiliser l’attribut aria-labelledby pour faire référence à l’élément
 label, ce qui permet d’être sûr que le libellé est lisible, quel que soit le support d’ARIA.
+```
 <label id="lblef" for="effectiveness">Effectiveness</label>
 <input type="image"
 role="slider"
 id="effectiveness"
 aria-labelledby="lblef"
 ...>
+```
 
 Parcourez la liste complète des états et propriétés pour en apprendre plus sur la manière dont ARIA peut vous aider à rendre votre contenu plus accessible.
+
 Ensemble, maintenant
 HTML n’a pas été conçu dans le but de créer des applications web, mais les développeurs les ont créées en dessinant leurs propres widgets, et en leur ajoutant des comportements avec Javascript. Le problème est que le rôle, l’état et les propriétés des widgets et du contenu mis à jour sur ces pages n’est pas correctement transmis aux technologies d’assistance. La spécification ARIA résoud ce problème en permettant aux développeurs de décrire précisément leurs éléments d’interface, leur structure de document, et les zones de la page qui seront modifiées.
 Que vous développiez une application web complète avec de nombreux wigets et mises à jour dynamiques, ou le plus simple des sites web, vous pouvez commencer à utiliser ARIA dès maintenant pour vos utilisateurs handicapés.
