@@ -261,6 +261,7 @@ Cette valeur est la plus élevée, et interrompt l’utilisateur pour lui notifi
 ## Quelques autres propriétés peuvent être utilisées lorsqu’une Live Region est créée, en voici la liste.
 
 La propriété `aria-atomic`
+
 `aria-atomic` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie).
 
 Lorsque la zone est mis à jour, la propriété aria-atomic permet à la technologie d’assistance de savoir si elle doit décrire à l’utilisateur la zone entière ou seulement la partie ayant été mise à jour. 
@@ -274,6 +275,7 @@ aria-live="polite">
 ```
 
 La propriété `aria-busy`
+
 `aria-busy` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie). Si plusieurs parties d’une Live Region ont besoin d’être chargées avant que la mise à jour ne soit annoncée à l’utilisateur, la propriété aria-busy peut être définie à true jusqu’à ce que la dernière partie soit chargée, puis à false lorsque la mise à jour est complètement terminée. 
 
 Cette propriété empêche les technologies d’assistance d’annoncer un changement avant qu’une mise à jour ne soit complétée.
@@ -284,6 +286,7 @@ aria-live="polite">
 ```
 
 La propriété `aria-channel`
+
 `aria-channel` est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou notify. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une plage Braille (ndt: lien ajouté). 
 
 Si un seul canal est disponible, main et notify utiliseront tous deux le même canal. Le canal notify a une priorité plus élevée que le canal main.
