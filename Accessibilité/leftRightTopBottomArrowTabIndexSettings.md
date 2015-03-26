@@ -1,3 +1,4 @@
+```
 // tabs, left up right down arrows 
 function tabIndex() {
     var tabindex = 1; 
@@ -42,3 +43,4 @@ function tabIndex() {
         $("*").removeClass("focusIn");
     });
 }
+```
