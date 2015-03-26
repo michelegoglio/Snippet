@@ -294,6 +294,7 @@ aria-live="polite">
 ```
 
 La propriété `aria-relevant`
+
 `aria-revelant` est une propriété optionnelle des Live Regions indiquant quels types de changements sont considérés comme significatifs à l’intérieur d’une zone (ajout d’un élément, suppression d’un élément et modification de texte). 
 
 Cette propriété accepte une ou plusieurs des valeurs suivantes, séparées par des espaces :
