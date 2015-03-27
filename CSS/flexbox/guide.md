@@ -1,3 +1,5 @@
+http://bocoup.com/weblog/dive-into-flexbox/
+
 Introduction
 Flexbox is a new layout mode in CSS3 that is designed for the more sophisticated needs of the modern web. This article will describe the newly-stablized Flexbox syntax in technical detail. Browser support is going to grow quickly, so you’ll be ahead of the game when support is wide enough for Flexbox to be practical. Read on if you want to know what it does and how it works!
 
