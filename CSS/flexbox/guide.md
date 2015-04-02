@@ -70,8 +70,33 @@ An important part of customizing your Flexbox is changing the direction of the f
 
 There is a [W3C Working Draft for a new feature called Writing Modes](http://www.w3.org/TR/css3-writing-modes/) . Writing Modes are a new way to write text right-to-left, or even vertically, as you might in certain languages.
 
-Writing Modes are a work-in-progress, but Chrome currently supports the direction CSS property. If we set the direction in the previous example to rtl (right-to-left) then not only is the text drawn right to left, but also the Flex Line changes direction, changing the page layout.
+Writing Modes are a work-in-progress, but Chrome currently supports the `direction` CSS property. If we set the direction in the previous example to `rtl` (right-to-left) then not only is the text drawn right to left, but also the Flex Line changes direction, changing the page layout.
 
+````
+<div class="flex-container">
+<div class="flex-item">flex item 1</div>
+<div class="flex-item">flex item 2</div>
+</div>
+
+body {
+    direction: rtl;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 300px;
+    height: 240px;
+    background-color: Silver;
+}
+
+.flex-item {
+    background-color: DeepSkyBlue;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+````
 
 This might clarify why a lot of the Flexbox terminology is so abstract. You can’t just say “right” “left” “up” and “down” when you’re making no assumptions about the language of the page.
 
