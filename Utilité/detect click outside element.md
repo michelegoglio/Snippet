@@ -1,3 +1,4 @@
+````
  function detectClickOutsideElement() {
 	$("body").click(function(e) {
 		if( $("TSTooltip").hasClass("active")){
@@ -7,3 +8,4 @@
 		}
 	});
 }
+````
