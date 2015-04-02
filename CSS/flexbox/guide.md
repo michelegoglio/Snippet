@@ -32,7 +32,6 @@ Flexbox consists of Flex Containers and Flex Items. A Flex Container is declared
   display: flex;
 }
 ````
-`view rawgistfile1.css` hosted with ❤ by GitHub
 This article will show all appropriate vendor prefixes in all examples.
 
 Every child of a Flex Container is a Flex Item. There can be any number of Flex Items. Everything outside a Flex Container and inside a Flex Item is rendered as usual. In short, Flexbox defines how Flex Items are laid out inside of Flex Containers.
