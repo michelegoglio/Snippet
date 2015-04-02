@@ -41,6 +41,27 @@ Every child of a Flex Container is a Flex Item. There can be any number of Flex 
 Flex Items are positioned inside a Flex Container along a Flex Line. By default there is only one Flex Line per Flex Container.
 
 Here is a simple example that shows two items as they are positioned by default: along a horizontal flex line, from left to right.
+````
+<div class="flex-container">
+<div class="flex-item">flex item 1</div>
+<div class="flex-item">flex item 2</div>
+</div>
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 300px;
+    height: 240px;
+    background-color: Silver;
+}
+
+.flex-item {
+    background-color: DeepSkyBlue;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+````
 
 
 ##Writing Modes
