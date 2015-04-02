@@ -1,3 +1,4 @@
+````
 if (!Array.prototype.indexOf) {
         Array.prototype.indexOf = function (elt /*, from*/) {
             var len = this.length >>> 0;
@@ -17,3 +18,4 @@ if (!Array.prototype.indexOf) {
             return -1;
         };
     }
+````
