@@ -68,7 +68,7 @@ Here is a simple example that shows two items as they are positioned by default:
 
 An important part of customizing your Flexbox is changing the direction of the flex line. By default, the Flex Line goes in the direction of text: left to right, top to bottom.
 
-There is a W3C Working Draft for a new feature called Writing Modes. Writing Modes are a new way to write text right-to-left, or even vertically, as you might in certain languages.
+There is a [W3C Working Draft for a new feature called Writing Modes](http://www.w3.org/TR/css3-writing-modes/) . Writing Modes are a new way to write text right-to-left, or even vertically, as you might in certain languages.
 
 Writing Modes are a work-in-progress, but Chrome currently supports the direction CSS property. If we set the direction in the previous example to rtl (right-to-left) then not only is the text drawn right to left, but also the Flex Line changes direction, changing the page layout.
 
