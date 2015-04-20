@@ -4,13 +4,13 @@ L’information ne doit jamais être véhiculée par la couleur seulement.
 	Penser aux daltoniens, aux personnes qui ont sur-contrasté leur écran, désactivant de ce fait les couleurs web.
 
 
-	Il faut tout  de même ajouter des effets visuels pour tout utilisateur :
+Il faut tout  de même ajouter des effets visuels pour tout utilisateur :
 * Ajouter une bordure rouge au champ lorsque non valide
 * Ajouter un effet visuel au survol du champ (ne pas supprimer l’outline)
 
 
 
--	Contrôler les couleurs, les contrastes
+Contrôler les couleurs, les contrastes
 
 SC 1.4.3 Contraste (minimum) : la présentation visuelle du texte et du texte sous forme d’image a un rapport de contraste d’au moins 4,5:1, sauf dans les cas suivants : (Niveau AA) Texte agrandi : le texte agrandi et le texte agrandi sous forme d’image ont un rapport de contraste d’au moins 3:1[…].
 
