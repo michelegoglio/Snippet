@@ -15,7 +15,7 @@ Contrôler les couleurs, les contrastes
 SC 1.4.3 Contraste (minimum) : la présentation visuelle du texte et du texte sous forme d’image a un rapport de contraste d’au moins 4,5:1, sauf dans les cas suivants : (Niveau AA) Texte agrandi : le texte agrandi et le texte agrandi sous forme d’image ont un rapport de contraste d’au moins 3:1[…].
 
 SC 1.4.6 Contraste (amélioré) : la présentation visuelle du texte et du texte sous forme d’image a un rapport de contraste d’au moins 7:1, sauf dans les cas suivants : (Niveau AAA) Texte agrandi : le texte agrandi et le texte agrandi sous forme d’image ont un rapport de contraste d’au moins 4,5:1 […].
-Outil : Contrast Analyser (http://paciellogroup.com/resources/contrastAnalyser)
+Outil : [Contrast Analyser](http://paciellogroup.com/resources/contrastAnalyser)
 
 
 -	Utiliser les labels
