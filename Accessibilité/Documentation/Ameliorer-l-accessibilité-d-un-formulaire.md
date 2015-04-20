@@ -102,10 +102,9 @@ input:focus + [role="tooltip"] {
 <button type="button" title="subtract 10" aria-controls="number">Subtract</button>
 ````
 
-/* 2. Incrementer & decrementer 
------------------------------------------------------------------------------------------
-*/
+## 2. Incrementer & decrementer 
 
+````
 $('[aria-controls="number"]').on('click', function() {
 var button = $(this);
   $('#number').val(function(i, oldval) {
@@ -114,19 +113,24 @@ var button = $(this);
      parseInt(oldval, 10) - 10;
   });
 });
+````
 
-The aria-live="assertive" attribute means that the value of the text field will be spoken whenever it changes.
-The aria-controls attribute just confirms that each button controls the input. Different screen readers identify this accessible relationship in different ways, but it helps to know what you are affecting.
+The `aria-live="assertive"` attribute means that the value of the text field will be spoken whenever it changes.
+The `aria-controls` attribute just confirms that each button controls the input. Different screen readers identify this accessible relationship in different ways, but it helps to know what you are affecting.
 
 
-Collapsible content sections
+**Collapsible content sections**
+````
 <button aria-expanded="false" aria-controls="collapsible-0">What is this all about?</button>
 <div id="collapsible-0" aria-hidden="true">
 <p>Lorem ipsum</p>
 </div>
+````
+
 A click function just toggles the aria-expanded and aria-hidden states.
 
-role="tablist"
+**`role="tablist"`**
+````
 <ul role="tablist">
 <li role="presentation"><a href="#section1" tabindex="0" role="tab" aria-controls="panel1" aria-selected="true">Section 1</a></li>
 <li role="presentation"><a href="#section2" tabindex="-1" role="tab" aria-controls="panel2">Section 2</a></li>
@@ -135,9 +139,9 @@ role="tablist"
 <section id="section1" role="tabpanel">...</section>
 <section id="section2" role="tabpanel" aria-hidden="true">...</section>
 <section id="section3" role="tabpanel" aria-hidden="true">...</section>
+````
 
-
-role="alertdialog"
+**`role="alertdialog"`**
 <dialog role="alertdialog" aria-describedby="d-message">
 <div role="document">
 <p id="d-message" >I really do not like you pressing that</p>
@@ -147,7 +151,7 @@ alertdialog role reserved for warning and error dialogs
 document role reinstates predictable key bindings if the dialog is in a role="application"
 Associates the message with the dialog element itself with aria-labelledby
 
-role="toolbar"
+**`role="toolbar"`**
 <div role="toolbar" aria-label="sorting options" aria-controls="sortable">
   <button type="button" aria-pressed="true" data-sort="ascending">A to Z</button>
   <button type="button" aria-pressed="false" data-sort="descending">Z to A</button>
@@ -158,7 +162,7 @@ role="toolbar"
 </ul>
 button with aria-pressed="true" will be appended with the word "pressed" when announced.
 
-role="navigation"
+**`role="navigation"`**
 a 	<nav role="navigation" aria-label="example with dropdowns" >
 	<	ul class="with-dropdowns">
 			<li><a href="#">Home</a></li>
