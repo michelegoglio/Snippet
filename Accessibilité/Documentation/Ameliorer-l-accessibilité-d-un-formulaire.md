@@ -142,16 +142,20 @@ A click function just toggles the aria-expanded and aria-hidden states.
 ````
 
 **`role="alertdialog"`**
+````
 <dialog role="alertdialog" aria-describedby="d-message">
 <div role="document">
 <p id="d-message" >I really do not like you pressing that</p>
 </div>
 </dialog>
-alertdialog role reserved for warning and error dialogs
+````
+`alertdialog` role reserved for warning and error dialogs
 document role reinstates predictable key bindings if the dialog is in a role="application"
 Associates the message with the dialog element itself with aria-labelledby
 
 **`role="toolbar"`**
+
+````
 <div role="toolbar" aria-label="sorting options" aria-controls="sortable">
   <button type="button" aria-pressed="true" data-sort="ascending">A to Z</button>
   <button type="button" aria-pressed="false" data-sort="descending">Z to A</button>
@@ -160,28 +164,33 @@ Associates the message with the dialog element itself with aria-labelledby
   <li>Fiddler crab</li>
   <li>Hermit crab</li>
 </ul>
-button with aria-pressed="true" will be appended with the word "pressed" when announced.
+````
+
+button with `aria-pressed="true"` will be appended with the word "pressed" when announced.
 
 **`role="navigation"`**
-a 	<nav role="navigation" aria-label="example with dropdowns" >
-	<	ul class="with-dropdowns">
-			<li><a href="#">Home</a></li>
-			<li>
-				<a href="/about" aria-haspopup="true">About</a>
-				<ul aria-hidden="true" aria-label="submenu">
-					<li><a href="/about/#who-we-are">Who we are</a></li>
-					<li><a href="/about/#what-we-do">What we do</a></li>
-					<li><a href="/about/#why">Why</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">Contact</a></li>
-	<		</ul>
-<	</nav>
-/* 9. Simple dropdowns
------------------------------------------------------------------------------------------
-*/
 
+````
+<nav role="navigation" aria-label="example with dropdowns" >
+	<ul class="with-dropdowns">
+		<li><a href="#">Home</a></li>
+		<li>
+			<a href="/about" aria-haspopup="true">About</a>
+			<ul aria-hidden="true" aria-label="submenu">
+				<li><a href="/about/#who-we-are">Who we are</a></li>
+				<li><a href="/about/#what-we-do">What we do</a></li>
+				<li><a href="/about/#why">Why</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+</nav>
+````
+
+## Simple dropdowns
+
+````
 $('[role="navigation"] ul ul').prev('a')
   .attr('aria-haspopup', 'true')
   .append('<span aria-hidden="true"> &#x25be;</span>');
@@ -213,6 +222,8 @@ $('[aria-haspopup]').hover(function() {
 $('[aria-haspopup]').parents('li').mouseleave(function() {
   hideSubmenu($(this).find('[aria-label="submenu"]'));
 });
-The aria-haspopup alerts you to the presence of a submenu.
+````
+
+The `aria-haspopup` alerts you to the presence of a submenu.
 The addition of an aria-label with a value of "submenu" just confirms it is a submenu you are entering as the first item is focused.
 The submenu is an enhancement, so aria-haspopup is only added when javascript runs, allowing you to reveal the submenu on click. If javascript does not run, the about link takes you to the top of the about page.
