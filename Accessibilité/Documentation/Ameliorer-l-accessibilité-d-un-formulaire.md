@@ -16,19 +16,21 @@ SC 1.4.6 Contraste (amélioré) : la présentation visuelle du texte et du texte
 Outil : [Contrast Analyser](http://paciellogroup.com/resources/contrastAnalyser)
 
 
--	Utiliser les labels
+**Utiliser les labels**
 	Un utilisateur de lecteur d’écran aura l’information pertinente 
-Par exemple mettre le focus sur le champ identifiant nous permettra d’entendre « Identifiant : “toto” ; champ texte ».
-
+Par exemple mettre le focus sur le champ identifiant nous permettra d’entendre **« Identifiant : “toto” ; champ texte ».**
+````
 	<label for="login">Identifiant</label>
 	<input type="text" name="login" id="login" value="">
+````
+L’attribut `for` du label pointe vers l’attribut `id` du champ texte.
 
-L’attribut for du label pointe vers l’attribut id du champ texte.
+The HTML `<label>` element is appropriate for form-related elements, but many form controls are implemented as a dynamic JavaScript widget, using `<div>`s or `<span>`s.
 
-The HTML <label> element is appropriate for form-related elements, but many form controls are implemented as a dynamic JavaScript widget, using <div>s or <span>s.
-WAI-ARIA provides the aria-labelledby attribute for these cases.
-The example below shows a radio button group implemented using an unordered list. The <ul> element sets the aria-labelledby attribute to "rg1_label," the id of the <h3> which is the label for the radio group.
+WAI-ARIA provides the `aria-labelledby` attribute for these cases.
 
+The example below shows a radio button group implemented using an unordered list. The `<ul`> element sets the `aria-labelledby` attribute to `"rg1_label,"` the id of the `<h3>` which is the label for the radio group.
+````
 <h3 id="rg1_label">Lunch Options</h3>
 <ul class="radiogroup" id="rg1"  role="radiogroup" aria-labelledby="rg1_label">
   <li id="r1"  tabindex="-1" role="radio" aria-checked="false">
@@ -38,54 +40,50 @@ The example below shows a radio button group implemented using an unordered list
     <img role="presentation" src="radio-unchecked.gif" /> Subway
   </li>
 </ul>
+````
 
-
--	Valider les champs avec ARIA
+**Valider les champs avec ARIA**
 
 ARIA permet d’enrichir les éléments d’un formulaire pour permettre à un utlisateur d’écran d’avoir les mêmes informations, le même feedback qu’un utlisateur n’ayant aucune déficience.
 
-o	Alerter l’utilisateur sur les champs non renseignés
-Sur perte de focus ou sur validation, rajouter un role="alert" sur le tooltip ou message qui va notifier à l’utilisateur que quelquechose d’important requiert son attention
+* Alerter l’utilisateur sur les champs non renseignés
+Sur perte de focus ou sur validation, rajouter un `role="alert"` sur le tooltip ou message qui va notifier à l’utilisateur que quelquechose d’important requiert son attention
 
+````
 <div role="alert" class="info-required">Indiquez votre identifiant</div>
+````
 
-o	Indiquer les champs obligatoires
-Déclarer le champ obligatoire avec l’attribut aria-required
+* Indiquer les champs obligatoires
+Déclarer le champ obligatoire avec l’attribut `aria-required`
+
+````
 <input type="text" aria-required="true" value="" id="login" name="login">
-Le lecteur d’écran va annoncer à l’utilisateur, le caractère obligatoire du champ : « Identifiant : champ texte, vide, obligatoire ».
+````
 
-o	Indiquer un champ invalide
-Sur perte de focus ou sur validation, ajouter dynamiquement l’attribut aria-invalid (vrai/faux)
+Le lecteur d’écran va annoncer à l’utilisateur, le caractère obligatoire du champ : `« Identifiant : champ texte, vide, obligatoire ».`
 
+* Indiquer un champ invalide
+Sur perte de focus ou sur validation, ajouter dynamiquement l’attribut `aria-invalid` (vrai/faux)
+
+````
 <input type="text" aria-required="true" value="" id="login" name="login" aria-invalid="true">
+````
 
 
+* Describing with ARIA
 
--	Describing with ARIA
+ARIA provides the `aria-describedby` attribute to directly associate the description with a control.
+The example below shows a `<button>` element that is described by a sentence in a separate `<div>` element. The aria-describedby attribute on the `<button>` references the id of the `<div>`.
 
-ARIA provides the aria-describedby attribute to directly associate the description with a control.
-The example below shows a <button> element that is described by a sentence in a separate <div> element. The aria-describedby attribute on the <button> references the id of the <div>.
-
+````
 <button aria-describedby="descriptionRevert">Revert</button>
 <div id="descriptionRevert">Reverting will undo any changes that have been made since the last save.</div>
+````
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-role="tooltip"
-      	<label for="username">Your username</label>
-	<	<input type="text" id="username" aria-describedby="username-tip" required />
+**`role="tooltip"`**
+````
+<label for="username">Your username</label>
+<input type="text" id="username" aria-describedby="username-tip" required />
 <div role="tooltip" id="username-tip">Your username is your email address</div>
 
 input:focus + [role="tooltip"] {
@@ -93,12 +91,16 @@ input:focus + [role="tooltip"] {
 	position: absolute;
 	top: 100%;
 }
+````
 
-role="alert"
+**`role="alert"`**
+
+````
 <label for="number">Current value</label>
 <input type="text" role="alert" aria-live="assertive" readonly value="0" id="number" />
 <button type="button" title="add 10" aria-controls="number">Add</button>
 <button type="button" title="subtract 10" aria-controls="number">Subtract</button>
+````
 
 /* 2. Incrementer & decrementer 
 -----------------------------------------------------------------------------------------
