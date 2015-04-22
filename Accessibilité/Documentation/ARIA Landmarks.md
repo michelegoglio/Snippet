@@ -115,7 +115,6 @@ A region of the document that represents a collection of form-associated element
 * NVDA 2012.3 do not recognize the Form region.
 * VoiceOver on IOS do not recognize Form land mark.
 * Talkback on Android says just “Form” at the beginning of the land mark. It does not identify the end of the land mark.
-* 
 
 
 
