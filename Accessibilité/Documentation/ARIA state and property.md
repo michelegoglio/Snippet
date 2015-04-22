@@ -46,3 +46,38 @@ This section contains attributes specific to common user interface elements foun
 * aria-valuemin
 * aria-valuenow
 * aria-valuetext
+ 
+Widget attributes might be mapped by a user agent to platform accessibility API states, for access by assistive technologies, or they might be accessed directly from the DOM. User agents MUST provide a way for assistive technologies to be notified when states change, either through DOM attribute change events or platform accessibility API events.
+
+###Live Region Attributes
+
+This section contains attributes specific to live regions in rich internet applications. These attributes may be applied to any element. The purpose of these attributes is to indicate that content changes may occur without the element having focus, and to provide assistive technologies with information on how to process those content updates. Some roles specify a default value for the aria-live attribute specific to that role. An example of a live region is a ticker section that lists updating stock quotes.
+
+* aria-atomic
+* aria-busy (state)
+* aria-live
+* aria-relevant
+
+
+
+###Drag-and-Drop Attributes
+
+This section lists attributes which indicate information about drag-and-drop interface elements, such as draggable elements and their drop targets. Drop target information will be rendered visually by the author and provided to assistive technologies through an alternate modality.
+
+*aria-dropeffect
+*aria-grabbed (state)
+
+For more information about using drag-and-drop, see Drag-and-Drop Support in the WAI-ARIA Authoring Practices ([ARIA-PRACTICES]).
+
+###Relationship Attributes
+
+This section lists attributes that indicate relationships or associations between elements which cannot be readily determined from the document structure.
+
+* aria-activedescendant
+* aria-controls
+* aria-describedby
+* aria-flowto
+* aria-labelledby
+* aria-owns
+* aria-posinset
+* aria-setsize
