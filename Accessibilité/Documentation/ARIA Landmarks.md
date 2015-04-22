@@ -86,7 +86,7 @@ Meta information which applies to the first immediate ancestor whose role is not
 * NVDA 2012.3 recognizes the beginning of the Content info region but could not announce when it ends. NVDA announces “Content info landmark” at the beginning of the Content info land mark.
 * VoiceOver on IOS recognizes Content info land mark but it announces “land mark start” and “Land mark end”. It does not say which land mark it is.
 * Talkback on Android says just “Content info” at the beginning of the land mark. It does not identify the end of the land mark.
-* 
+
 
 ##Complementary
 Any section of the document that supports but is separable from the main content, but is meaningful on its own even when separated from it.
