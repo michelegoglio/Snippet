@@ -1,7 +1,8 @@
-#3D cube animation <!DOCTYPE html>
+#3D cube animation 
 *HTML*
 
 ````
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
