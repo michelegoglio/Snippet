@@ -1,6 +1,6 @@
 #Reset btn in html5
 
-** required on input[type="text"] & placeholder attribute, button type="reset" **
+**required on input[type="text"] & placeholder attribute, button type="reset"**
 
 ````
 <div class="search-wrapper">
