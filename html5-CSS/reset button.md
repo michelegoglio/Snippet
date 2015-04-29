@@ -62,4 +62,8 @@
 .search-box:not(:valid) ~ .close-icon {
 	display: none;
 }
+
+.search-box::-ms-clear{
+    display:none; /* IE */
+}
 ````
