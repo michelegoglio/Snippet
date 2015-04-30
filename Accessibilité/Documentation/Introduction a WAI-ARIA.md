@@ -2,9 +2,9 @@
  
 L’article qui suit est la traduction de l’article [" Introduction to WAI ARIA"](http://dev.opera.com/articles/view/introduction-to-wai-aria/) , publié par [Gez Lemon](http://juicystudio.com/) sur [Dev Opera](http://dev.opera.com/), le site d’Opera Software destiné aux développeurs.
 
-Gez Lemon est un expert reconnu de l’accessibilité web. Il est membre du [WaSP](http://www.webstandards.org) ([Accessibility Task Force](http://www.webstandards.org/action/atf)) et travaille pour The Paciello Group, entreprise de conseil spécialisée dans l’accessibilité web.
+Gez Lemon est un expert reconnu de l’accessibilité web. Il est membre du [WaSP](http://www.webstandards.org) ([Accessibility Task Force](http://www.webstandards.org/action/atf)) et travaille pour [The Paciello Group](http://www.paciellogroup.com), entreprise de conseil spécialisée dans l’accessibilité web.
 
-Cette traduction, comme l’article original, est placée sous licence Creative Commons by-nc-sa 2.5.
+Cette traduction, comme l’article original, est placée sous licence [Creative Commons by-nc-sa 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/deed.fr).
 
 Cet article est destiné à des personnes ne connaissant pas ARIA. Vous devriez avoir une bonne connaissance du langage HTML et des problèmes que peuvent rencontrer les personnes handicapées sur le web. Connaître quelques application web « riches » (RIA) d’un point de vue utilisateur serait un plus.
 
