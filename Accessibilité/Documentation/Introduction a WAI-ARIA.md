@@ -233,29 +233,29 @@ Les Live Regions permettent à certains éléments du document d’annoncer qu�
 
 Par exemple, une application de chat pourrait signaler une réponse de la personne avec qui l’utilisateur est en train de discuter, sans être déplacé en-dehors du champ permettant d’envoyer un nouveau message à la personne.
 
-`aria-live`
+La propriété `aria-live`
 
 Pour un utilisateur de lecteur d’écran, il est très difficile de comprendre ce qui a été mis à jour sur une page. ARIA propose la propriété `aria-live`, dont la valeur indique l’importance des mises à jour de la région. Voici les différents niveaux d’alerte pouvant être utilisés avec la propriété `aria-live` :
 
-`off` 
+* `off` 
 Il s’agit de la valeur par défaut, indiquant que la zone ne sera pas mise à jour.
 ```
 <ul aria-live="off">
 ```
 
-`polite`
+* `polite`
 C’est une notification normale, le comportement généralement attendu d’une Live Region. La valeur polite indique qu’il n’est pas nécessaire d’y répondre tant que l’utilisateur n’a pas terminé ce qu’il est actuellement en train de faire.
 ```
 <ul aria-live="polite">
 ```
 
-`assertive`
+* `assertive`
 Ce niveau d’alerte est plus élevé que la normale, mais n’interrompt pas nécessairement l’utilisateur.
 ```
 <ul aria-live="assertive">
 ```
 
-`rude`
+* `rude`
 Cette valeur est la plus élevée, et interrompt l’utilisateur pour lui notifier la mise à jour. Il peut s’en trouver désorienté, et peut empêcher l’utilisateur de reprendre la tâche qu’il effectuait. Elle ne devrait être utilisée qu’en cas d’absolue nécessité.
 ```
 <ul aria-live="rude">
