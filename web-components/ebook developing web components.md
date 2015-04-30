@@ -57,7 +57,7 @@ being aware of and understanding.
 
 What’s intriguing about web components is that the bulk of it is maddeningly obvious. Two years after you buy into 
 web components whole hog, you will look back at the twenty-aughts as this primitive time filled with Neanderlithic 
-frameworks and “best practices” that involved putting whole string templates in <script> tags. When recalling this 
+frameworks and “best practices” that involved putting whole string templates in `<script>` tags. When recalling this 
 era of development to your grandchildren, they will look at you with skepticism and ask disbelievingly, “Gramps, 
 did you really not have native templates in your DOM or are you just yanking our chains?”
 
