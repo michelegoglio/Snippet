@@ -78,7 +78,7 @@ you’re going to be writing your templates and partials in <template> tags from
 
 ####HTML Imports
 The HTML import is another foolishly simple concept that accommodates a single interaction point for 
-independent bundles to be loaded by. What has already been done for <script> and <style> tags has now been 
+independent bundles to be loaded by. What has already been done for `<script>` and `<style>` tags has now been 
 done for HTML itself. The bonus, on top of what was done for scripts and styles, is that the imported HTML 
 can then infinitely link to all its own dependencies in the same formats that already exist. This will allow 
 a developer to include miniature applications and all their dependencies with a single @include, instead of 
