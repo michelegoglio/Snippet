@@ -27,7 +27,7 @@ Les applications web utilisent des techniques comme AJAX pour mettre à jour le 
 
 Si elles sont tout de même informées de ces mises à jour, l’utilisateur n’est pas pour autant informé que le contenu à été mis à jour, et n’a aucun moyen de localiser la zone mise à jour.
 
-WAI-ARIA est une spécification qui propose la possibilité de définir une description des rôles, des états et des propriétés pour les widgets personnalisés, de manière à ce qu’ils soient reconnaissables et utilisables par les utilisateurs de technologies d’assistance. 
+[WAI-ARIA](http://www.w3.org/WAI/intro/aria) est une spécification qui propose la possibilité de définir une description des rôles, des états et des propriétés pour les widgets personnalisés, de manière à ce qu’ils soient reconnaissables et utilisables par les utilisateurs de technologies d’assistance. 
 
 WAI-ARIA propose également un système permettant de s’assurer qu’un utilisateur de technologie d’assistance est informé des mises à jour de l’application.
 
@@ -36,13 +36,13 @@ WAI-ARIA propose également un système permettant de s’assurer qu’un utilis
 
 Le langage HTML a été conçu pour être un système hypertexte, permettant de structurer et de partager des documents liés entre eux. Les premiers brouillons de la spécification HTML définissaient des balises comme des titres, des paragraphes, des listes, ou des ancres, pour ajouter une structure à des documents texte. 
 
-La première proposition d’une spécification HTML par l’IETF incluait l’élément img, permettant d’ajouter des images à l’intérieur du document. 
+La [première proposition d’une spécification HTML](http://www.w3.org/MarkUp/draft-ietf-iiir-html-01.txt) par l’IETF incluait l’élément img, permettant d’ajouter des images à l’intérieur du document. 
 
-La première spécification formelle fût HTML 2, basée sur les premiers brouillons de HTML. 
+La première spécification formelle fût [HTML 2](http://tools.ietf.org/html/rfc1866), basée sur les premiers brouillons de HTML. 
 
 Cette spécification a défini les formulaires, ainsi que quelques composants d’interface permettant de créer des zones éditables, des boutons, des cases à cocher, des boutons radio, et des menus déroulants. 
 
-Le petit ensemble de de contrôles définis dans HTML 2 n’a quasiment pas changé jusqu’à HTML 4.01, que nous utilisons actuellement.
+Le petit ensemble de de contrôles définis dans HTML 2 n’a quasiment pas changé jusqu’à [HTML 4.01](http://www.w3.org/TR/html401/), que nous utilisons actuellement.
 
 Le modèle de communication de HTML est basé sur un modèle client / serveur : le client envoie des requêtes et reçoit des réponses ; Le serveur web attend les requêtes, les traite, puis renvoie une réponse au client. 
 
@@ -95,7 +95,7 @@ La navigation commence avec les éléments ayant la plus petite valeur tabindex,
 
 Si le document a une structure logique, l’attribut tabindex n’est pas requis car les éléments d’interface sont naturellement définis dans l’ordre de tabulation.
 
-ARIA étend l’attribut tabindex, lui permettant d’être utilisé sur tous les éléments visibles. ARIA autorise également l’utilisation d’une valeur négative pour les éléments ne devant pas être proposés à la navigation au clavier, mais pouvant recevoir le focus par programmation. Bien que la valeur d’un attribut tabindex négatif n’aie pas d’importance (l’élément ne pourra jamais recevoir le focus au clavier), la valeur -1 est couramment utilisée lorsqu’un élément ne doit pas recevoir le focus au clavier, mais uniquement par programmation.
+ARIA [étend l’attribut tabindex](http://www.w3.org/TR/wai-aria/#tabindex), lui permettant d’être utilisé sur tous les éléments visibles. ARIA autorise également l’utilisation d’une valeur négative pour les éléments ne devant pas être proposés à la navigation au clavier, mais pouvant recevoir le focus par programmation. Bien que la valeur d’un attribut tabindex négatif n’aie pas d’importance (l’élément ne pourra jamais recevoir le focus au clavier), la valeur -1 est couramment utilisée lorsqu’un élément ne doit pas recevoir le focus au clavier, mais uniquement par programmation.
 
 Par exemple, vous pourriez réaliser un menu dont l’élément conteneur est accessible à l’aide de la tabulation clavier, mais pas les éléments qu’il contient. 
 
@@ -124,7 +124,7 @@ objDiv.focus();
 ```
 
 ## Que suis-je ?
-ARIA propose l’attribut role pour définir les widgets, comme un bouton glissant (slider), ou définir la structure de la page, comme un menu. 
+ARIA propose l’[attribut role](http://www.w3.org/TR/wai-aria/#Using_intro) pour définir les widgets, comme un bouton glissant (slider), ou définir la structure de la page, comme un menu. 
 
 Un problème majeur des applications web est que n’importe quel élément peut être utilisé pour créer un widget. Les éléments HTML possèdent déjà des rôles prédéfinis. 
 
@@ -147,11 +147,12 @@ aria-valuenow="42"
 aria-valuetext="42 percent"
 aria-labelledby="leffective">
 ```
-Lorsque le focus est placé sur cet élément, un utilisateur de lecteur d’écran comprend ce que fait ce widget. La spécification ARIA propose une liste de rôles.
+Lorsque le focus est placé sur cet élément, un utilisateur de lecteur d’écran comprend ce que fait ce widget. La spécification ARIA propose une [liste de rôles](http://www.w3.org/TR/wai-aria/#roles).
 
 ## Rôle des sections du document (document landmark roles)
 
-Les rôles que nous venons de voir permettent de décrire des widgets, mais il existe également des rôles permettant de décrire la structure du document. Les document landmarks (ou description des zones) sont un sous-ensemble des rôles classiques permettant aux utilisateurs de lecteurs d’écran de comprendre le rôle d’une zone pour mieux s’orienter dans le document.
+Les rôles que nous venons de voir permettent de décrire des widgets, mais il existe également des rôles permettant de décrire la structure du document. 
+Les [document landmarks](http://www.w3.org/tr/wai-aria/#roleattribute_inherits) (ou description des zones) sont un sous-ensemble des rôles classiques permettant aux utilisateurs de lecteurs d’écran de comprendre le rôle d’une zone pour mieux s’orienter dans le document.
 ARIA définit les rôles de document landmarks (zones du document) suivants :
 
 `article`
@@ -190,7 +191,7 @@ Les exemples suivants utilisent les rôles banner, navigation et main pour défi
 
 ## États et propriétés d’ARIA
 
-Les états (states) et propriétés (properties) d’ARIA permettent de décrire des informations supplémentaires sur les widgets et de les mettre à la disposition des technologies d’assistance, afin d’aider l’utilisateur à comprendre comment intéragir avec le widget. L’état définit une configuration ou une information unique sur un objet. 
+Les [états (states) et propriétés (properties)](http://www.w3.org/TR/wai-aria/#introstates) d’ARIA permettent de décrire des informations supplémentaires sur les widgets et de les mettre à la disposition des technologies d’assistance, afin d’aider l’utilisateur à comprendre comment intéragir avec le widget. L’état définit une configuration ou une information unique sur un objet. 
 
 Par exemple, la propriété aria-checked possède trois valeurs pour définir ses états : true, false et mixed.
 
@@ -223,7 +224,7 @@ objThumb.setAttribute('aria-valuetext', iValue + ' %');
 
 Ajouter des rôles et attributs ARIA ne sera pas valide HTML 4.01 ou XHTML1.0, mais rassurez-vous, ARIA ne fait qu’ajouter des informations importantes à des spécifications écrites depuis un bon moment maintenant. 
 
-Des travaux sont en cours pour définir une DTD pouvant être utilisée avec du XML modulaire, comme XHTML1.1. La spécification ARIA fournit une liste complète des états et propriétés permettant de définir des widgets accessibles.
+Des travaux sont en cours pour [définir une DTD pouvant être utilisée avec du XML modulaire](http://www.w3.org/WAI/PF/adaptable/StatesAndProperties-20051106.html), comme XHTML1.1. La spécification ARIA fournit une [liste complète des états et propriétés](http://www.w3.org/TR/wai-aria/#supported) permettant de définir des widgets accessibles.
 
 
 ## Les « Live Regions » (zones mises à jour)
@@ -287,7 +288,7 @@ aria-live="polite">
 
 La propriété `aria-channel`
 
-`aria-channel` est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou notify. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une plage Braille (ndt: lien ajouté). 
+`aria-channel` est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou notify. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une [plage Braille](http://fr.wikipedia.org/wiki/Plage_braille) (ndt: lien ajouté). 
 
 Si un seul canal est disponible, main et notify utiliseront tous deux le même canal. Le canal notify a une priorité plus élevée que le canal main.
 ```
@@ -440,7 +441,7 @@ aria-labelledby="lblef"
 ...>
 ```
 
-Parcourez la liste complète des états et propriétés pour en apprendre plus sur la manière dont ARIA peut vous aider à rendre votre contenu plus accessible.
+Parcourez la [liste complète des états et propriétés](http://www.w3.org/TR/wai-aria/#supported) pour en apprendre plus sur la manière dont ARIA peut vous aider à rendre votre contenu plus accessible.
 
 Ensemble, maintenant
 HTML n’a pas été conçu dans le but de créer des applications web, mais les développeurs les ont créées en dessinant leurs propres widgets, et en leur ajoutant des comportements avec Javascript. Le problème est que le rôle, l’état et les propriétés des widgets et du contenu mis à jour sur ces pages n’est pas correctement transmis aux technologies d’assistance. 
