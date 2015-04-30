@@ -1,6 +1,6 @@
 # Introduction à WAI ARIA (traduction)
  
-L’article qui suit est la traduction de l’article « Introduction to WAI ARIA« , publié parGez Lemon sur Dev Opera, le site d’Opera Software destiné aux développeurs.
+L’article qui suit est la traduction de l’article [" Introduction to WAI ARIA"](http://dev.opera.com/articles/view/introduction-to-wai-aria/) , publié parGez Lemon sur Dev Opera, le site d’Opera Software destiné aux développeurs.
 
 Gez Lemon est un expert reconnu de l’accessibilité web. Il est membre du WaSP (Accessibility Task Force ) et travaille pour The Paciello Group, entreprise de conseil spécialisée dans l’accessibilité web.
 
