@@ -103,20 +103,20 @@ Ces éléments peuvent alors être programmés pour être parcourus à l’aide 
 
 **Ajouter un élément à l’ordre naturel des tabulations**
 
-L’exemple suivant affecte la valeur 0 à l’attribut tabindex pour placer l’élément divdans l’ordre des tabulations, ce qui permettra d’y accéder à l’aide de la navigation clavier.
+L’exemple suivant affecte la valeur `0` à l’attribut `tabindex` pour placer l’élément `div` dans l’ordre des tabulations, ce qui permettra d’y accéder à l’aide de la navigation clavier.
 ```
 <div tabindex="0">
 ...
 </div>
 ```
 **Tabindex négatif**
-L’exemple suivant utilise un tabindex d’une valeur négative, cet élément pourra alors recevoir le focus par programmation.
+L’exemple suivant utilise un `tabindex` d’une valeur négative, cet élément pourra alors recevoir le focus par programmation.
 ```
 <div id="progaccess" tabindex="-1">
 ...
 </div>
 ```
-Dans cet exemple, l’élément div n’est pas placé dans l’ordre des tabulations, mais possède un attribut tabindex d’une valeur de -1. Le script qui suit sélectionne l’élément précédemment défini et utilise la méthode focus() pour activer le focus sur cet élément.
+Dans cet exemple, l’élément `div` n’est pas placé dans l’ordre des tabulations, mais possède un attribut `tabindex` d’une valeur de `-1`. Le script qui suit sélectionne l’élément précédemment défini et utilise la méthode `focus()` pour activer le focus sur cet élément.
 ```
 var objDiv = document.getElementById('progaccess');
 // Focus on the element
@@ -124,7 +124,7 @@ objDiv.focus();
 ```
 
 ## Que suis-je ?
-ARIA propose l’[attribut role](http://www.w3.org/TR/wai-aria/#Using_intro) pour définir les widgets, comme un bouton glissant (slider), ou définir la structure de la page, comme un menu. 
+ARIA propose l’`[attribut role`](http://www.w3.org/TR/wai-aria/#Using_intro) pour définir les widgets, comme un bouton glissant (slider), ou définir la structure de la page, comme un menu. 
 
 Un problème majeur des applications web est que n’importe quel élément peut être utilisé pour créer un widget. Les éléments HTML possèdent déjà des rôles prédéfinis. 
 
@@ -132,11 +132,11 @@ Le rôle d’un élément est « ce qu’il fait » – le rôle qu’il a dans 
 
 Lorsque des widgets sont réalisés à partir d’éléments existants, le rôle d’un élément est ce que la technologie d’assistance définit plutôt que ce qu’il représente visuellement en tant que widget. 
 
-Par exemple, si le visuel d’un slider est créé en utilisant un élément img avec un texte alternatif approprié, un lecteur d’écran pourrait annoncer le contrôle comme ceci : « Image d’un slider », plutôt que quelque chose de plus intéressant, comme « Bouton glissant, 16 pour cents ».
+Par exemple, si le visuel d’un slider est créé en utilisant un élément `img` avec un texte alternatif approprié, un lecteur d’écran pourrait annoncer le contrôle comme ceci : « Image d’un slider », plutôt que quelque chose de plus intéressant, comme « Bouton glissant, 16 pour cents ».
 
-Le rôle donné par l’attribut role prend le pas sur le rôle natif de l’élément. 
+Le rôle donné par l’attribut `role` prend le pas sur le rôle natif de l’élément. 
 
-Dans l’exemple suivant, un élément input possède un attribut role dont la valeur est slider (nous verrons d’autres propriétés ARIA plus loin dans cet article) — le rôle indiqué à la technologie d’assistance est slider (bouton glissant), plutôt que input(entrée utilisateur).
+Dans l’exemple suivant, un élément `input` possède un attribut `role` dont la valeur est `slider` (nous verrons d’autres propriétés ARIA plus loin dans cet article) — le rôle indiqué à la technologie d’assistance est `slider` (bouton glissant), plutôt que `input`(entrée utilisateur).
 ```
 <input type="image" src="thumb.gif"
 alt="Effectiveness"
@@ -193,7 +193,7 @@ Les exemples suivants utilisent les rôles banner, navigation et main pour défi
 
 Les [états (states) et propriétés (properties)](http://www.w3.org/TR/wai-aria/#introstates) d’ARIA permettent de décrire des informations supplémentaires sur les widgets et de les mettre à la disposition des technologies d’assistance, afin d’aider l’utilisateur à comprendre comment intéragir avec le widget. L’état définit une configuration ou une information unique sur un objet. 
 
-Par exemple, la propriété aria-checked possède trois valeurs pour définir ses états : true, false et mixed.
+Par exemple, la propriété `aria-checked` possède trois valeurs pour définir ses états : `true`, `false` et `mixed`.
 
 Dans l’exemple du bouton glissant vu un peu plus haut, nous avons inclus différentes propriétés que nous allons voir ci-dessous, aidant à décrire un widget à une technologie d’assistance.
 
@@ -211,13 +211,14 @@ Stocke du texte lisible permettant à l’utilisateur de comprendre le contexte.
 
 `aria-labelledby`
 Stocke l’identifiant (attribut id) d’un élément contenant une description appropriée du widget.
+
 Certaines propriétés peuvent être modifiées par programmation. 
 
-Dans l’exemple suivant, les propriétés arial-valuenow et `arial-valuetext` de notre widget de bouton glissant sont mises à jour lorsque le bouton change de position :
-// Définit les valeurs des propriétés ARIA
-// lorsque le bouton change de position
+Dans l’exemple suivant, les propriétés `arial-valuenow` et `arial-valuetext` de notre widget de bouton glissant sont mises à jour lorsque le bouton change de position :
 
 ```
+// Définit les valeurs des propriétés ARIA
+// lorsque le bouton change de position
 objThumb.setAttribute('aria-valuenow', iValue);
 objThumb.setAttribute('aria-valuetext', iValue + ' %');
 ```
@@ -233,9 +234,10 @@ Les Live Regions permettent à certains éléments du document d’annoncer qu�
 Par exemple, une application de chat pourrait signaler une réponse de la personne avec qui l’utilisateur est en train de discuter, sans être déplacé en-dehors du champ permettant d’envoyer un nouveau message à la personne.
 
 `aria-live`
-Pour un utilisateur de lecteur d’écran, il est très difficile de comprendre ce qui a été mis à jour sur une page. ARIA propose la propriété aria-live, dont la valeur indique l’importance des mises à jour de la région. Voici les différents niveaux d’alerte pouvant être utilisés avec la propriété `aria-live` :
 
-`off`
+Pour un utilisateur de lecteur d’écran, il est très difficile de comprendre ce qui a été mis à jour sur une page. ARIA propose la propriété `aria-live`, dont la valeur indique l’importance des mises à jour de la région. Voici les différents niveaux d’alerte pouvant être utilisés avec la propriété `aria-live` :
+
+`off` 
 Il s’agit de la valeur par défaut, indiquant que la zone ne sera pas mise à jour.
 ```
 <ul aria-live="off">
@@ -263,13 +265,14 @@ Cette valeur est la plus élevée, et interrompt l’utilisateur pour lui notifi
 
 La propriété `aria-atomic`
 
-`aria-atomic` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie).
+`aria-atomic` est une propriété optionnelle des Live Regions pouvant prendre comme valeur `true` ou `false` (par défaut si la propriété n’est pas définie).
 
-Lorsque la zone est mis à jour, la propriété aria-atomic permet à la technologie d’assistance de savoir si elle doit décrire à l’utilisateur la zone entière ou seulement la partie ayant été mise à jour. 
+Lorsque la zone est mis à jour, la propriété `aria-atomic` permet à la technologie d’assistance de savoir si elle doit décrire à l’utilisateur la zone entière ou seulement la partie ayant été mise à jour. 
 
-Si cette propriété est définie à true, la technologie d’assistance devrait décrire complètement la zone. Si sa valeur est false, seule la partie mise à jour devrait être annoncée.
+Si cette propriété est définie à `true`, la technologie d’assistance devrait décrire complètement la zone. Si sa valeur est `false`, seule la partie mise à jour devrait être annoncée.
 
-Dans l’exemple suivant, tous les éléments de la liste non-ordonnée seront annoncés à l’utilisateur, à moins qu’un de ces éléments ne surcharge la propriété aria-atomic.
+Dans l’exemple suivant, tous les éléments de la liste non-ordonnée seront annoncés à l’utilisateur, à moins qu’un de ces éléments ne surcharge la propriété `aria-atomic`.
+
 ```
 <ul aria-atomic="true"
 aria-live="polite">
@@ -277,7 +280,7 @@ aria-live="polite">
 
 La propriété `aria-busy`
 
-`aria-busy` est une propriété optionnelle des Live Regions pouvant prendre comme valeur true ou false (par défaut si la propriété n’est pas définie). Si plusieurs parties d’une Live Region ont besoin d’être chargées avant que la mise à jour ne soit annoncée à l’utilisateur, la propriété aria-busy peut être définie à true jusqu’à ce que la dernière partie soit chargée, puis à false lorsque la mise à jour est complètement terminée. 
+`aria-busy` est une propriété optionnelle des Live Regions pouvant prendre comme valeur `true` ou `false` (par défaut si la propriété n’est pas définie). Si plusieurs parties d’une Live Region ont besoin d’être chargées avant que la mise à jour ne soit annoncée à l’utilisateur, la propriété `aria-busy` peut être définie à `true` jusqu’à ce que la dernière partie soit chargée, puis à `false` lorsque la mise à jour est complètement terminée. 
 
 Cette propriété empêche les technologies d’assistance d’annoncer un changement avant qu’une mise à jour ne soit complétée.
 ```
@@ -288,9 +291,9 @@ aria-live="polite">
 
 La propriété `aria-channel`
 
-`aria-channel` est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou notify. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une [plage Braille](http://fr.wikipedia.org/wiki/Plage_braille) (ndt: lien ajouté). 
+`aria-channel` est une propriété optionnelle des Live Regions pouvant prendre comme valeur main (par défaut si la propriété n’est pas définie) ou `notify`. Les canaux (channels) ont trait au matériel disponible sur le système de l’utilisateur, comme un synthétiseur vocal ou une [plage Braille](http://fr.wikipedia.org/wiki/Plage_braille) (ndt: lien ajouté). 
 
-Si un seul canal est disponible, main et notify utiliseront tous deux le même canal. Le canal notify a une priorité plus élevée que le canal main.
+Si un seul canal est disponible, `main` et `notify` utiliseront tous deux le même canal. Le canal `notify` a une priorité plus élevée que le canal `main`.
 ```
 <ul aria-atomic="true"
 aria-channel="notify"
@@ -303,16 +306,19 @@ La propriété `aria-relevant`
 
 Cette propriété accepte une ou plusieurs des valeurs suivantes, séparées par des espaces :
 
-* additions
+* `additions`
 Des noeuds sont ajoutés au DOM à l’intérieur de la zone.
-* removals
+
+* `removals`
 Des noeuds sont supprimés du DOM à l’intérieur de la zone.
-* text
+
+* `text`
 Du texte est ajouté ou supprimé du DOM (modification de texte).
-* all
+
+* `all`
 Toutes les valeurs définies précédemment (additions, removals, text) s’appliquent à la zone.
 
-En l’absence de la propriété `aria-revelant`, le comportement par défaut considère que les modifications significatives sont les modifications de texte et les ajouts de noeuds (aria-revelant="text additions"). 
+En l’absence de la propriété `aria-revelant`, le comportement par défaut considère que les modifications significatives sont les modifications de texte et les ajouts de noeuds (`aria-revelant="text additions"`). 
 
 L’exemple suivant n’annoncera des changements que si des noeuds sont ajoutés à la région. Si des modifications de texte surviennent ou que des noeuds sont supprimés, l’utilisateur n’en sera pas averti.
 ```
@@ -336,7 +342,7 @@ Même si votre site web est le plus simple du monde, vous pouvez y inclure des d
 
 Utilisez les rôles de section (document landmark roles)
 
-Sur mon site web personnel, j’ai utilisé les rôles de zones main, navigation, search, et secondary. Prenons la structure suivante.
+Sur mon site web personnel, j’ai utilisé les rôles de zones `main`, `navigation`, `search`, et `secondary`. Prenons la structure suivante.
 ```
 <div id="ads">
 ...
@@ -352,7 +358,7 @@ Sur mon site web personnel, j’ai utilisé les rôles de zones main, navigation
 </div>
 ```
 
-Nous pourrions écrire l’attribut role pour nos document landmarks directement dans le code HTML :
+Nous pourrions écrire l’attribut `role` pour nos document landmarks directement dans le code HTML :
 ```
 <div id="ads" role="banner">
 ...
@@ -368,7 +374,8 @@ Nous pourrions écrire l’attribut role pour nos document landmarks directement
 </div>
 ```
 
-Alternativement, puisque les pages sont structurées de manière à pouvoir être stylées avec CSS, la page a des chances d’être structurée à l’aide d’attributs id pouvant être passés à une fonction Javascript. L’exemple suivant est une fonction Javascript simple acceptant l’attribut id d’un élément et une valeur de role, lui permettant de définir l’attribut role de l’élément correspondant.
+Alternativement, puisque les pages sont structurées de manière à pouvoir être stylées avec CSS, la page a des chances d’être structurée à l’aide d’attributs id pouvant être passés à une fonction Javascript. L’exemple suivant est une fonction Javascript simple acceptant l’attribut `id` d’un élément et une valeur de `role`, lui permettant de définir l’attribut `role` de l’élément correspondant.
+
 ```
 function addARIARole(strID, strRole)
 {
@@ -382,7 +389,8 @@ objElement.setAttribute('role', strRole);
 }
 ```
 
-La fonction peut alors être appelée en passant en paramètre l’attribut id de la section et son rôle dans le document. Considérez la structure de document ci-dessous : nous pourrions utiliser cette fonction Javascript pour insérer un attribut role, plutôt que de l’écrire dans le code HTML.
+La fonction peut alors être appelée en passant en paramètre l’attribut `id` de la section et son rôle dans le document. Considérez la structure de document ci-dessous : nous pourrions utiliser cette fonction Javascript pour insérer un attribut `role`, plutôt que de l’écrire dans le code HTML.
+
 ```
 function setupARIA()
 {
@@ -397,7 +405,7 @@ window.onload = setupARIA;
 ```
 
 ## Indiquer les champs requis
-Si certains de vos formulaires contiennent des champs requis, vous pouvez utiliser la propriété `aria-required`. Cette propriété indique qu’une entrée utilisateur est requise pour envoyer le formulaire. L’exemple suivant ajoute la propriété `aria-required` à un élément input classique.
+Si certains de vos formulaires contiennent des champs requis, vous pouvez utiliser la propriété `aria-required`. Cette propriété indique qu’une entrée utilisateur est requise pour envoyer le formulaire. L’exemple suivant ajoute la propriété `aria-required` à un élément `input` classique.
 ```
 <label for="contactname">Name</label>
 <input type="text"
@@ -407,10 +415,10 @@ size="30"
 aria-required="true">
 ```
 
-Le système de blog WordPress a déjà commencé à utiliser l’attribut aria-requiredpour les champs requis du formulaire d’envoi de commentaire.
+Le système de blog WordPress a déjà commencé à utiliser l’attribut `aria-required` pour les champs requis du formulaire d’envoi de commentaire.
 
 ## Ajouter d’autres propriétés pertinentes
-Beaucoup de propriétés ARIA peuvent être utilisées sur des sites web très simples, comme `aria-labelledby` et `aria-describedby`. La propriété aria-labelledby pointe sur un ou plusieurs éléments considérés comme le libellé de l’élément, tandis que l’attribut aria-describedby pointe sur un ou plusieurs éléments considérés comme la description de l’élément.
+Beaucoup de propriétés ARIA peuvent être utilisées sur des sites web très simples, comme `aria-labelledby` et `aria-describedby`. La propriété `aria-labelledby` pointe sur un ou plusieurs éléments considérés comme le libellé de l’élément, tandis que l’attribut `aria-describedby` pointe sur un ou plusieurs éléments considérés comme la description de l’élément.
 ```
 <h2 id="limg">Paragliding</h2>
 <p id="dimg">
@@ -427,10 +435,10 @@ aria-describedby="dimg">
 
 ## Priorité des attributs HTML
 
-Les attributs ARIA ont la priorité sur le code HTML de base. C’est à dire que si aria-labelledby est utilisé parallèlement à `<label for="">`, seul l’attribut aria-labelledby sera pris en compte. 
+Les attributs ARIA ont la priorité sur le code HTML de base. C’est à dire que si `aria-labelledby` est utilisé parallèlement à `<label for="">`, seul l’attribut `aria-labelledby` sera pris en compte. 
 
-L’élément label est toujours encouragé pour les anciens navigateurs ne supportant pas ARIA. Une technique simple pour éviter les conflits est d’utiliser l’attribut aria-labelledby pour faire référence à l’élément
-label, ce qui permet d’être sûr que le libellé est lisible, quel que soit le support d’ARIA.
+L’élément `label` est toujours encouragé pour les anciens navigateurs ne supportant pas ARIA. Une technique simple pour éviter les conflits est d’utiliser l’attribut `aria-labelledby` pour faire référence à l’élément
+`label`, ce qui permet d’être sûr que le libellé est lisible, quel que soit le support d’ARIA.
 
 ```
 <label id="lblef" for="effectiveness">Effectiveness</label>
