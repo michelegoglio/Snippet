@@ -936,20 +936,6 @@ http://one-div.com/
 }
 ````      
 ![41](https://cloud.githubusercontent.com/assets/5993597/7499839/fcb0dd8e-f3f7-11e4-821f-c1b1d8f694ca.jpg)
-##Cone via Omid Rasouli
-````
-#cone {
-  width: 0;
-  height: 0;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-top: 100px solid red;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-````       
-![42](https://cloud.githubusercontent.com/assets/5993597/7499851/039d40b0-f3f8-11e4-935f-26cb6cf60c85.jpg)
 ##Cross via Kaya Basharan
 ````
 #cross {
