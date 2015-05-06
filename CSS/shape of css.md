@@ -10,6 +10,8 @@ http://www.bchanx.com/logos-in-pure-css-demo
 
 http://nicolasgallagher.com/pure-css-gui-icons/demo/#non
 
+http://www.alessioatzeni.com/wp-content/tutorials/html-css/CSS3-loading-animation-loop/index.html
+
 #The Shapes of CSS
 
 ##Square
