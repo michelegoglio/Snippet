@@ -6,6 +6,8 @@ http://lynnandtonic.github.io/a-single-div/
 
 http://cssaz.tumblr.com/
 
+http://www.bchanx.com/logos-in-pure-css-demo
+
 #The Shapes of CSS
 
 ##Square
