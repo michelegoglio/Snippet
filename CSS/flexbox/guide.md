@@ -40,7 +40,10 @@ Every child of a Flex Container is a Flex Item. There can be any number of Flex 
 
 Flex Items are positioned inside a Flex Container along a Flex Line. By default there is only one Flex Line per Flex Container.
 
+![1](https://cloud.githubusercontent.com/assets/5993597/7493877/46ecc6c2-f3d2-11e4-8208-7e29141093b3.jpg)
+
 Here is a simple example that shows two items as they are positioned by default: along a horizontal flex line, from left to right.
+![2](https://cloud.githubusercontent.com/assets/5993597/7493879/49054ea2-f3d2-11e4-90b0-3be289476d83.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -71,7 +74,7 @@ An important part of customizing your Flexbox is changing the direction of the f
 There is a [W3C Working Draft for a new feature called Writing Modes](http://www.w3.org/TR/css3-writing-modes/) . Writing Modes are a new way to write text right-to-left, or even vertically, as you might in certain languages.
 
 Writing Modes are a work-in-progress, but Chrome currently supports the `direction` CSS property. If we set the direction in the previous example to `rtl` (right-to-left) then not only is the text drawn right to left, but also the Flex Line changes direction, changing the page layout.
-
+![3](https://cloud.githubusercontent.com/assets/5993597/7493880/4d80d55a-f3d2-11e4-805e-063aa293b799.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -104,7 +107,7 @@ This might clarify why a lot of the Flexbox terminology is so abstract. You can�
 
 To abstract over the writing-mode, Flexbox uses the concepts of the Main Axis and the Cross Axis. Flex Lines follow the Main Axis. The Cross Axis is perpendicular to the Main Axis.
 
-
+![4](https://cloud.githubusercontent.com/assets/5993597/7493884/4f1a94c8-f3d2-11e4-971f-7cdc62004357.jpg)
 
 The names for the starting points, ending points, and directions of each axis are as follows:
 
@@ -128,7 +131,7 @@ With this value, Flex Items are laid out in the direction of the `writing-mode`.
 * column-reverse`: Same as column, but reversed.
 
 Let’s take our previous example and change the `flex-direction` to `column`.
-
+![5](https://cloud.githubusercontent.com/assets/5993597/7493886/5113e310-f3d2-11e4-9f08-d7e48e436720.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -165,7 +168,7 @@ The `justify-content` property of Flex Containers adjusts the positions of Flex 
 * space-around
 
 Here we set `justify-content` to `center` to cause Flex Items to be centered on the Main Axis:
-
+![6](https://cloud.githubusercontent.com/assets/5993597/7493889/53010dba-f3d2-11e4-877a-a2cbfb00c3f7.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -191,6 +194,7 @@ Here we set `justify-content` to `center` to cause Flex Items to be centered on 
 ````
 
 `flex-start`, `flex-end`, and `center` are straightforward. `space-between` and `space-around` distribute the whitespace between Flex Items in more subtle ways. This diagram from the specification explains it best:
+![7](https://cloud.githubusercontent.com/assets/5993597/7493891/595a42a8-f3d2-11e4-8d98-afcb1fe563f9.jpg)
 
 ###align-items
 
@@ -203,6 +207,7 @@ Here we set `justify-content` to `center` to cause Flex Items to be centered on 
 * stretch
 
 Here we set `align-items` to `center` to cause Flex Items to be centered on the Cross Axis:
+![8](https://cloud.githubusercontent.com/assets/5993597/7493894/5b9f2830-f3d2-11e4-8bab-4c541d7b5daf.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -229,9 +234,10 @@ Here we set `align-items` to `center` to cause Flex Items to be centered on the 
 
 
 
-Again, the `flex-start`, `flex-end`, and `center` values are straightforward. stretch is also fairly simple: it causes Flex Items to be stretched out from the Cross Start to the Cross End. `baseline` causes Flex Items to be aligned along their baseline. 
+Again, the `flex-start`, `flex-end`, and `center` values are straightforward. `stretch` is also fairly simple: it causes Flex Items to be stretched out from the Cross Start to the Cross End. `baseline` causes Flex Items to be aligned along their baseline. 
 
 Baselines are calculated based on the content of the Flex Items. This is best explained by the following image from the Flexbox specification:
+![9](https://cloud.githubusercontent.com/assets/5993597/7493897/5ebf222c-f3d2-11e4-8c96-ac62f4fbc881.jpg)
 
 ###flex-wrap
 
@@ -244,6 +250,7 @@ Up until now, every Flex Container has had only one Flex Line. Using `flex-wrap`
 If `flex-wrap` is set to `wrap`, Flex Items wrap onto additional Flex Lines if there is not enough room for them on one Flex Line. Additional Flex Lines are added in the direction of the Cross Axis.
 
 Here is an example using `flex-wrap`:
+![10](https://cloud.githubusercontent.com/assets/5993597/7493898/61202eee-f3d2-11e4-8ba9-67e13b40ac7f.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -286,6 +293,7 @@ Here is an example using `flex-wrap`:
 These values are analagous to their counterparts in `justify-content` and `align-items`.
 
 In this example we set `align-content` to `center`:
+![11](https://cloud.githubusercontent.com/assets/5993597/7493901/64aa9f90-f3d2-11e4-9302-2a9afbdbf512.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -342,6 +350,7 @@ Flex Items are said to have a Main Size and a Cross Size. The Main Size is the s
 `order` is the simplest one. Setting orders for `Flex Items` adjusts their order when rendered. 
 
 In this example, we set the `order` of one Flex Item to -1, causing it to be displayed before any other `Flex Item`s.
+![12](https://cloud.githubusercontent.com/assets/5993597/7493903/6710a536-f3d2-11e4-912d-8a6715a30992.jpg)
 
 ````
 <div class="flex-container">
@@ -382,6 +391,7 @@ This can be useful for accessibility, where the document order and the displayed
 You may be familiar with [the normal effect](http://learnlayout.com/margin-auto.html) of `margin: auto`;. In Flexbox it does the same sort of thing, but it’s even more powerful. An “auto” margin will absorb extra space. It can be used to push Flex Items into different positions.
 
 Here we declare `margin-right: auto`; on the first Flex Item, causing all the extra space to be absorbed to the right of that element:
+![13](https://cloud.githubusercontent.com/assets/5993597/7493906/6b6db5d8-f3d2-11e4-9c5d-431bae28feae.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">flex item 1</div>
@@ -411,6 +421,7 @@ Here we declare `margin-right: auto`; on the first Flex Item, causing all the ex
 }
 ````
 Here we use `margin: auto`; to achieve the holy grail of CSS layout: true vertical centering:
+![14](https://cloud.githubusercontent.com/assets/5993597/7493908/6da3cb76-f3d2-11e4-9e5d-2d3951279843.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item">I'm centered!</div>
@@ -444,6 +455,7 @@ The `align-self` property of Flex Items effectively overrides the Flex Container
 * baseline
 
 In this example we give different align-self values to each Flex Item:
+![15](https://cloud.githubusercontent.com/assets/5993597/7493910/712a8014-f3d2-11e4-8f28-c37ea2d66665.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item item1">flex-start</div>
@@ -513,6 +525,7 @@ Let’s look at each of the common values one at a time.
 This syntax specifies a number that represents the ratio of free space that should be taken by this Flex Item.
 
 In this example, the first Flex Item consumes 2/4 of the free space, and the other two Flex Items consume 1/4 of the free space each:
+![16](https://cloud.githubusercontent.com/assets/5993597/7493912/736b969c-f3d2-11e4-8bf0-94a2c64e61b5.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item item1">flex: 2</div>
@@ -551,6 +564,7 @@ In this example, the first Flex Item consumes 2/4 of the free space, and the oth
 
 
 It can be useful to set the number to 1 for every Flex Item, causing free space to be distributed evenly:
+![17](https://cloud.githubusercontent.com/assets/5993597/7493914/76bd3ef4-f3d2-11e4-907a-70178bd83640.jpg)
 ````
 <div class="flex-container">
 <div class="flex-item item1">flex: 1</div>
