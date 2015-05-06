@@ -12,7 +12,8 @@ http://one-div.com/
 	height: 100px;
 	background: red;
 }
-````					
+````
+![1](https://cloud.githubusercontent.com/assets/5993597/7499796/e419d6a4-f3f7-11e4-8492-6d24c94b14eb.jpg)
 ##Rectangle
 ````
 #rectangle {
@@ -20,7 +21,8 @@ http://one-div.com/
 	height: 100px;
 	background: red;
 }
-````				
+````	
+![2](https://cloud.githubusercontent.com/assets/5993597/7499797/e6b950c4-f3f7-11e4-91ba-9a4881fb77ad.jpg)
 ##Circle
 ````
 #circle {
@@ -33,7 +35,7 @@ http://one-div.com/
 }
 /* Cleaner, but slightly less support: use "50%" as value */
 ````	
-
+![3](https://cloud.githubusercontent.com/assets/5993597/7499800/ed613680-f3f7-11e4-9531-ffdffc569d97.jpg)
 ##Oval
 ````
 #oval {
@@ -46,7 +48,7 @@ http://one-div.com/
 }
 /* Cleaner, but slightly less support: use "50%" as value */
 ````	
-
+![4](https://cloud.githubusercontent.com/assets/5993597/7499801/eeec148e-f3f7-11e4-916d-8c2d2c8165e0.jpg)
 ##Triangle Up
 ````
 #triangle-up {
@@ -56,7 +58,8 @@ http://one-div.com/
 	border-right: 50px solid transparent;
 	border-bottom: 100px solid red;
 }
-````					
+````
+![5](https://cloud.githubusercontent.com/assets/5993597/7499807/fa3cd6ac-f3f7-11e4-86f9-9ed388545db7.jpg)
 ##Triangle Down
 ````
 #triangle-down {
@@ -66,7 +69,8 @@ http://one-div.com/
 	border-right: 50px solid transparent;
 	border-top: 100px solid red;
 }
-````					
+````
+![6](https://cloud.githubusercontent.com/assets/5993597/7499841/fcd289e8-f3f7-11e4-843f-8bd76e45c4a9.jpg)
 ##Triangle Left
 ````
 #triangle-left {
@@ -76,7 +80,8 @@ http://one-div.com/
 	border-right: 100px solid red;
 	border-bottom: 50px solid transparent;
 }
-````					
+````
+![7](https://cloud.githubusercontent.com/assets/5993597/7499844/fce50398-f3f7-11e4-9b65-d36628ff6e1a.jpg)
 ##Triangle Right
 ````
 #triangle-right {
@@ -86,7 +91,8 @@ http://one-div.com/
 	border-left: 100px solid red;
 	border-bottom: 50px solid transparent;
 }
-````					
+````
+![8](https://cloud.githubusercontent.com/assets/5993597/7499842/fce3c12c-f3f7-11e4-9181-ea3932de1cf4.jpg)
 ##Triangle Top Left
 ````
 #triangle-topleft {
@@ -95,7 +101,8 @@ http://one-div.com/
 	border-top: 100px solid red;
 	border-right: 100px solid transparent;
 }
-````					
+````
+![9](https://cloud.githubusercontent.com/assets/5993597/7499845/fcf1e4f0-f3f7-11e4-86b8-b5fc0d1b352f.jpg)
 ##Triangle Top Right
 ````
 #triangle-topright {
@@ -105,7 +112,8 @@ http://one-div.com/
 	border-left: 100px solid transparent;
 
 }
-````				
+````
+![10](https://cloud.githubusercontent.com/assets/5993597/7499843/fce48fa8-f3f7-11e4-9004-b4c914c99330.jpg)
 ##Triangle Bottom Left
 ````
 #triangle-bottomleft {
@@ -114,7 +122,8 @@ http://one-div.com/
 	border-bottom: 100px solid red;
 	border-right: 100px solid transparent;
 }
-````					
+````	
+![11](https://cloud.githubusercontent.com/assets/5993597/7499808/fa5e81a8-f3f7-11e4-8ce3-efc4a4da77d8.jpg)
 ##Triangle Bottom Right
 ````
 #triangle-bottomright {
@@ -124,6 +133,7 @@ http://one-div.com/
 	border-left: 100px solid transparent;
 }
 ````
+![12](https://cloud.githubusercontent.com/assets/5993597/7499809/fa802092-f3f7-11e4-8afb-b9ba40fb24b4.jpg)
 ##Curved Tail Arrow via Ando Razafimandimby
 ````
 #curvedarrow {
@@ -152,7 +162,8 @@ http://one-div.com/
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
 }
-````					
+````
+![13](https://cloud.githubusercontent.com/assets/5993597/7499810/fa9ee11c-f3f7-11e4-933a-661e78434b6f.jpg)
 ##Trapezoid
 ````
 #trapezoid {
@@ -162,7 +173,8 @@ http://one-div.com/
 	height: 0;
 	width: 100px;
 }
-````					
+````	
+![14](https://cloud.githubusercontent.com/assets/5993597/7499812/fabbb1de-f3f7-11e4-826e-9ec728a3de2e.jpg)
 ##Parallelogram
 ````
 #parallelogram {
@@ -173,7 +185,8 @@ http://one-div.com/
 	     -o-transform: skew(20deg);
 	background: red;
 }
-````					
+````
+![15](https://cloud.githubusercontent.com/assets/5993597/7499814/fad87e22-f3f7-11e4-8e3e-de39dc773270.jpg)
 ##Star (6-points)
 ````
 #star-six {
@@ -195,7 +208,8 @@ http://one-div.com/
 	top: 30px;
 	left: -50px;
 }
-````					
+````
+![16](https://cloud.githubusercontent.com/assets/5993597/7499815/fb341cc8-f3f7-11e4-9d88-5184a68e3dcd.jpg)
 ##Star (5-points) via Kit MacAllister
 ````
 #star-five {
@@ -247,7 +261,8 @@ http://one-div.com/
    -o-transform:      rotate(-70deg);
    content: '';
 }
-````					
+````
+![17](https://cloud.githubusercontent.com/assets/5993597/7499816/fb683ca6-f3f7-11e4-8fd1-56ca069e386d.jpg)
 ##Pentagon
 ````
 #pentagon {
@@ -268,7 +283,8 @@ http://one-div.com/
     border-style: solid;
     border-color: transparent transparent red;
 }
-````					
+````
+![18](https://cloud.githubusercontent.com/assets/5993597/7499817/fb85c6c2-f3f7-11e4-8622-6f5257e620d6.jpg)
 ##Hexagon
 ````
 #hexagon {
@@ -299,7 +315,8 @@ http://one-div.com/
 	border-right: 50px solid transparent;
 	border-top: 25px solid red;
 }
-````					
+````
+![19](https://cloud.githubusercontent.com/assets/5993597/7499818/fba55f6e-f3f7-11e4-8588-7b81e7499d94.jpg)
 ##Octagon
 ````
 #octagon {
@@ -332,7 +349,8 @@ http://one-div.com/
 	width: 42px;
 	height: 0;
 }
-````					
+````	
+![20](https://cloud.githubusercontent.com/assets/5993597/7499819/fbbc34aa-f3f7-11e4-8af3-a88fd367c169.jpg)
 ##Heart via Nicolas Gallagher
 ````
 #heart {
@@ -375,7 +393,8 @@ http://one-div.com/
          -o-transform-origin: 100% 100%;
             transform-origin :100% 100%;
 }
-````					
+````
+![21](https://cloud.githubusercontent.com/assets/5993597/7499820/fbd58680-f3f7-11e4-9547-57efe4e094b9.jpg)
 ##Infinity via Nicolas Gallagher
 ````
 #infinity {
@@ -413,7 +432,8 @@ http://one-div.com/
          -o-transform: rotate(45deg);
             transform: rotate(45deg);
 }
-````					
+````
+![22](https://cloud.githubusercontent.com/assets/5993597/7499821/fbf311f0-f3f7-11e4-8a6c-5fe46eb6a933.jpg)
 ##Diamond Square via Joseph Silber
 ````
 #diamond {
@@ -435,6 +455,7 @@ http://one-div.com/
 	border-top-color: red;
 }
 ````
+![23](https://cloud.githubusercontent.com/assets/5993597/7499822/fc1003fa-f3f7-11e4-8d47-4efd6ecbf4f1.jpg)
 ##Diamond Shield via Joseph Silber
 ````
 #diamond-shield {
@@ -455,6 +476,7 @@ http://one-div.com/
 	border-top: 70px solid red;
 }
 ````
+![24](https://cloud.githubusercontent.com/assets/5993597/7499823/fc36b4dc-f3f7-11e4-912a-09eaae46072c.jpg)
 ##Diamond Narrow via Joseph Silber
 ````
 #diamond-narrow {
@@ -475,6 +497,7 @@ http://one-div.com/
 	border-top: 70px solid red;
 }
 ````
+![25](https://cloud.githubusercontent.com/assets/5993597/7499824/fc563c4e-f3f7-11e4-9d00-1ceed04de49a.jpg)
 ##Cut Diamond via Alexander Futekov
 ````
 #cut-diamond {
@@ -498,6 +521,7 @@ http://one-div.com/
     border-width: 70px 50px 0 50px;
 }
 ````
+![26](https://cloud.githubusercontent.com/assets/5993597/7499825/fc7149c6-f3f7-11e4-9265-50755237989f.jpg)
 ##Egg
 ````
 #egg {
@@ -509,6 +533,7 @@ http://one-div.com/
    border-radius:         50%  50%  50%  50%  / 60%   60%   40%  40%;
 }
 ````
+![27](https://cloud.githubusercontent.com/assets/5993597/7499826/fc7e4ba8-f3f7-11e4-8db0-077b3b9226e6.jpg)
 ##Pac-Man
 ````
 #pacman {
@@ -524,6 +549,7 @@ http://one-div.com/
   border-bottom-right-radius: 60px;
 }
 ````
+![28](https://cloud.githubusercontent.com/assets/5993597/7499832/fc934dbe-f3f7-11e4-8ba0-191f1dc09395.jpg)
 ##Talk Bubble
 ````
 #talkbubble {
@@ -547,6 +573,7 @@ http://one-div.com/
    border-bottom: 13px solid transparent;
 }
 ````
+![29](https://cloud.githubusercontent.com/assets/5993597/7499827/fc8e98be-f3f7-11e4-8d8f-f4ffc3f38ee9.jpg)
 ##12 Point Burst via Alan Johnson
 ````
 #burst-12 {
@@ -578,6 +605,7 @@ http://one-div.com/
          -o-transform: rotate(60deg);
 }
 ````
+![30](https://cloud.githubusercontent.com/assets/5993597/7499828/fc8ef21e-f3f7-11e4-8e22-8992d3a5b465.jpg)
 ##8 Point Burst via Alan Johnson
 ````
 #burst-8 {
@@ -605,6 +633,7 @@ http://one-div.com/
          -o-transform: rotate(135deg);
 }
 ````
+![31](https://cloud.githubusercontent.com/assets/5993597/7499829/fc8f015a-f3f7-11e4-975c-cae7fc15327e.jpg)
 ##Yin Yang via Alexander Futekov
 ````
 #yin-yang {
@@ -642,6 +671,7 @@ http://one-div.com/
 	height: 12px;
 }
 ````
+![32](https://cloud.githubusercontent.com/assets/5993597/7499830/fc8f8e54-f3f7-11e4-8afe-e983de1f017e.jpg)
 ##Badge Ribbon via Catalin Rosu
 ````
 #badge-ribbon {
@@ -678,6 +708,7 @@ http://one-div.com/
   -o-transform:      rotate(140deg);
 }
 ````
+![33](https://cloud.githubusercontent.com/assets/5993597/7499831/fc91da7e-f3f7-11e4-82fd-ac6ae0327e6e.jpg)
 ##Space Invader via Vlad Zinculescu
 ````
 #space-invader{
@@ -722,6 +753,7 @@ http://one-div.com/
     margin: 50px 0 70px 65px;
   }
 ````
+![34](https://cloud.githubusercontent.com/assets/5993597/7499833/fc9c25e2-f3f7-11e4-8194-da187363ebcc.jpg)
 ##TV Screen
 ````
 #tv {
@@ -746,6 +778,7 @@ http://one-div.com/
   border-radius: 5% / 50%;
 }
 ````
+![35](https://cloud.githubusercontent.com/assets/5993597/7499835/fc9fddc2-f3f7-11e4-8bd0-5db6c3b9171e.jpg)
 ##Chevron via Anthony Ticknor
 ````
 #chevron {
@@ -786,7 +819,7 @@ http://one-div.com/
   transform: skew(0deg, -6deg);
 }​
 ````
-
+![36](https://cloud.githubusercontent.com/assets/5993597/7499834/fc9debac-f3f7-11e4-90e2-223dd80aeb63.jpg)
 ##Magnifying Glass
 ````
 #magnifying-glass
@@ -815,7 +848,8 @@ http://one-div.com/
      -ms-transform: rotate(45deg);
       -o-transform: rotate(45deg);
 }
-````          
+````     
+![37](https://cloud.githubusercontent.com/assets/5993597/7499836/fc9ff1a4-f3f7-11e4-9f63-8f02d84e9423.jpg)
 ##Facebook Icon via Nathan Swartz
 ```` 
 #facebook-icon {
@@ -849,7 +883,8 @@ http://one-div.com/
   background: #eee;
   right: 5px;
 }
-````          
+````  
+![38](https://cloud.githubusercontent.com/assets/5993597/7499837/fca31db6-f3f7-11e4-9a97-4746f40c596c.jpg)
 ##Cone via Omid Rasouli
 ````
 #cone {
@@ -862,7 +897,8 @@ http://one-div.com/
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-````          
+````    
+![39](https://cloud.githubusercontent.com/assets/5993597/7499840/fcb143f0-f3f7-11e4-9055-3709ea9198de.jpg)
 ##Moon via Omid Rasouli
 ````
 #moon {
@@ -871,7 +907,8 @@ http://one-div.com/
   border-radius: 50%;
   box-shadow: 15px 15px 0 0 red;
 }
-````          
+````        
+![40](https://cloud.githubusercontent.com/assets/5993597/7499838/fcb0a0b2-f3f7-11e4-8002-5f3b4b74ec3f.jpg)
 ##Flag via Zoe Rooney
 ````
 #flag {
@@ -897,7 +934,8 @@ http://one-div.com/
   border-left: 55px solid transparent;
   border-right: 55px solid transparent;
 }
-````          
+````      
+![41](https://cloud.githubusercontent.com/assets/5993597/7499839/fcb0dd8e-f3f7-11e4-821f-c1b1d8f694ca.jpg)
 ##Cone via Omid Rasouli
 ````
 #cone {
@@ -910,7 +948,8 @@ http://one-div.com/
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-````          
+````       
+![42](https://cloud.githubusercontent.com/assets/5993597/7499851/039d40b0-f3f8-11e4-935f-26cb6cf60c85.jpg)
 ##Cross via Kaya Basharan
 ````
 #cross {
@@ -928,7 +967,8 @@ http://one-div.com/
   top: 40px;
   width: 100px;
 }
-````         
+````  
+![43](https://cloud.githubusercontent.com/assets/5993597/7499853/03a067fe-f3f8-11e4-9818-f1aa60b623b5.jpg)
 ##Base via Josh Rodgers
 ````
 #base {
@@ -952,3 +992,4 @@ http://one-div.com/
   width: 0;
 }
 ````
+![44](https://cloud.githubusercontent.com/assets/5993597/7499852/039d521c-f3f8-11e4-90a8-8db306953d2c.jpg)
