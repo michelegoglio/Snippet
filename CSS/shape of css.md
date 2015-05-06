@@ -2,6 +2,10 @@
 
 http://one-div.com/
 
+http://lynnandtonic.github.io/a-single-div/
+
+http://cssaz.tumblr.com/
+
 #The Shapes of CSS
 
 ##Square
