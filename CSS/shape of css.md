@@ -8,6 +8,8 @@ http://cssaz.tumblr.com/
 
 http://www.bchanx.com/logos-in-pure-css-demo
 
+http://nicolasgallagher.com/pure-css-gui-icons/demo/#non
+
 #The Shapes of CSS
 
 ##Square
