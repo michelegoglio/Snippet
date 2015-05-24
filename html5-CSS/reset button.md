@@ -1,4 +1,4 @@
-#Reset btn in html5
+#Reset btn in html5 && delete IE native icon
 
 **required on input[type="text"] & placeholder attribute, button type="reset"**
 
@@ -67,5 +67,4 @@ input[type="text"],
 		}	  	
 	}	
 }
-
-````
+```'
