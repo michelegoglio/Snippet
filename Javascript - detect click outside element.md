@@ -1,3 +1,4 @@
+# Detect click outside element to hide it 
 ````
 - ElementToHide
 - TriggerOnClick
