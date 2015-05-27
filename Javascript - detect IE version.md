@@ -1,4 +1,4 @@
-    ''''
+````
     var isIE = false;
     if (navigator.userAgent.indexOf('MSIE') != -1){
         var detectIEregexp = /MSIE (\d+\.\d+);/ //test for MSIE x.x
@@ -13,4 +13,4 @@
             }
         }
     }
-    ''''
+````
