@@ -1,4 +1,18 @@
 ````
+.mixins-appearance(){
+   -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
+}
+
+.mixins-backface-visibility(@property){
+  -webkit-backface-visibility: @property;
+  -moz-backface-visibility: @property;
+  -ms-backface-visibility: @property;
+  -o-backface-visibility: @property;
+  backface-visibility: @property;
+}
+
 .mixin-background-opacity(@r,@v,@b,@opacity,@defaultColor) {
 	background-color: @defaultColor;
 	background: rgba(@r,@v,@b,@opacity);
@@ -34,10 +48,12 @@
 	border-top-left-radius: @string;	
 }
 
-.mixins-box-sizing(){
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+.mixins-box-sizing(@style){
+	  -webkit-box-sizing: @style;
+	  -moz-box-sizing: @style;
+	  -ms-box-sizing: @style;
+	  -o-box-sizing: @style;  
+	  box-sizing: @style;
 }
 
 .mixins-ellipsis(@width){
@@ -45,6 +61,14 @@
 	text-overflow:ellipsis;
 	white-space:nowrap;
 	width:@width;
+}
+
+.mixins-perspective(@x){
+  -webkit-perspective: @x;
+    -moz-perspective:  @x;    
+    -ms-perspective:  @x;    
+    -o-perspective:  @x;
+    perspective:  @x;  
 }
 
 .mixins-placeholder{
@@ -70,8 +94,8 @@
   	-o-transform: rotate(@degrees);
   	-ms-transform: rotate(@degrees);
 	 transform: rotate(@degrees);
-	 -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand')";filter:      progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand');
-
+	 -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand')";
+	 filter: progid:DXImageTransform.Microsoft.Matrix(M11=@m11, M12=@m12, M21=@m21, M22=@m22,sizingMethod='auto expand');
 }
 	.mixins-rotate(180deg,-1.00000000,-0.00000000,0.00000000,-1.00000000);
 	http://www.boogdesign.com/examples/transforms/matrix-calculator.html
@@ -87,6 +111,35 @@
 .mixins-tap-highlight(@col1,@col2,@col3,@opacity){
 	-webkit-tap-highlight-color: rgba(@col1,@col2,@col3,@opacity);
 	-webkit-tap-highlight-color: transparent;
+}
+
+.mixin-transform-translate3d(@x,@y,@z){
+	  -webkit-transform: translate3d(@x,@y,@z);
+	  transform: translate3d(@x,@y,@z);
+}
+
+.mixins-transform-translateX(@X){
+	   -webkit-transform: translateX(@X);
+	  -moz-transform: translateX(@X);
+	  -ms-transform: translateX(@X);
+	  -o-transform: translateX(@X);
+	  transform: translateX(@X);
+}
+
+.mixins-transition(@duration){
+	  -webkit-transition: all @duration ease-in;
+	  -moz-transition: all @duration ease-in;
+	  -o-transition: all @duration ease-in;
+	  -ms-transition: all @duration ease-in;
+	  transition: all @duration ease-in;
+}
+
+.mixins-transition-delay(@delay){
+	  -webkit-transition: @delay;
+	  -moz-transition: @delay;
+	  -o-transition: @delay;
+	  -ms-transition: @delay;
+	  transition: @delay;
 }
 
 .mixins-transition-duration(@duration){
