@@ -65,8 +65,8 @@ This section contains attributes specific to live regions in rich internet appli
 
 This section lists attributes which indicate information about drag-and-drop interface elements, such as draggable elements and their drop targets. Drop target information will be rendered visually by the author and provided to assistive technologies through an alternate modality.
 
-*aria-dropeffect
-*aria-grabbed (state)
+* aria-dropeffect
+* aria-grabbed (state)
 
 For more information about using drag-and-drop, see Drag-and-Drop Support in the WAI-ARIA Authoring Practices ([ARIA-PRACTICES]).
 
