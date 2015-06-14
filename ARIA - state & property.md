@@ -99,7 +99,21 @@ Identifies the currently active descendant of a composite widget. Used to deal w
 ````
 
 * `aria-atomic`
-Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. See related aria-relevant.
+Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. 
+The `aria-atomic` property is an optional property that can have the values `true` or `false` (default). When the region is updated, the atomic property is used to indicate if assistive technologies should present all or part of the changed region to the user, and is influenced by the aria-relevant property. If the `aria-atomic` property is set to `true`, assistive technologies should present the entire region as a whole depending on the `aria-relevant` property; otherwise, the part of the region that changed might be announced on its own.
+
+Sometimes, updates make sense on their own, such as a new line arriving in a chat application. Other times, changes in the content may not make sense without the context of other parts of the region. In these cases, `aria-atomic="true"` should be set on the relevant container so the region is presented as a whole. In the following example, if a change is made anywhere in the div element, the whole content is announced to the user.
+````
+<div aria-live="polite" 
+    aria-atomic="true">
+  <h3>Currently playing</h3>
+  <p>Jake Bugg - Lightening Bolt</p>
+</div>
+````
+
+
+
+
 
 * `aria-autocomplete`
 Indicates whether user input completion suggestions are provided.
