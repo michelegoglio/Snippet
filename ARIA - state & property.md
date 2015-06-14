@@ -89,7 +89,14 @@ This section lists attributes that indicate relationships or associations betwee
 Below is an alphabetical list of WAI-ARIA states and properties to be used by rich internet application authors. A detailed definition of each WAI-ARIA state and property follows this compact list.
 
 * `aria-activedescendant`
-Identifies the currently active descendant of a composite widget.
+Identifies the currently active descendant of a composite widget. Used to deal with multiple focusable children, ie. in a tree menu
+````
+<div role="toolbar" tabindex="0" aria-activedescendant="button1">
+<img src="buttoncut.png" alt="cut" role="button" id="button1">
+<img src="buttoncopy.png" alt="copy" role="button" id="button2">
+<img src="buttonpaste.png" alt="paste" role="button" id="button3">
+</div> 
+````
 
 * `aria-atomic`
 Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. See related aria-relevant.
