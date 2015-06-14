@@ -121,9 +121,28 @@ An `aria-autocomplete` property is used when the suggestions of user input items
 `aria-autocomplete=”both”`: Combination of inline and list.
 To intimate the user that the text fields are not just text fields use `aria-haspopup=”true”`. `Role=”combobox”` can also be used to provide an essence of a list items available along with the text field. Provide `aria-readonly=”true”` when author does not want the user to type in text field and only pick the option from the list available. It is used when the text field have `aria-autocomplete=”list”`. For `aria-autocomplete=”inline”`, `aria-autocomplete=”both”` and of course for `aria-autocomplete=”none”` aria-readonly should not be used or should be `aria-readonly=”false”`.
 `aria-autocomplete` property has good support with JAWS 14 on Internet explorer 9, latest browsers of Google Chrome and Firefox. With NVDA 2013.3 Google Chrome has good support while remaining two browsers have partial support.
+````
+  <input aria-autocomplete="list" aria-controls="autocomplelist">
+  <ul role="listbox" id="autocompletelist" aria-activedescendant="option1">
+    <li role="listitem" id="option1">first option</li>
+    <li role="listitem" id="option2">second option</li> 
+  </ul>
+````
 
 * `aria-busy` (state)
 Indicates whether an element, and its subtree, are currently being updated.
+`ARIA-busy` state should be used by the content authors when a portion on a web page has auto updating content. `ARIA-busy` is a state having two possible values `ARIA-busy=”true”` and `ARIA-busy=”false”`.
+
+`ARIA-busy=”true”` is set when a relevant portion of the page is currently getting updated and the users are waiting to read the updated content. Users of assistive technology will not be able to read anything while the content is getting updated. They could probably hear “busy” with few screen readers. Once the content is updated content authors can set `ARIA-busy=”false”` or remove the `ARIA-busy` attribute Once the content is updated the assistive technologies gather the updated information and provide it to the user.
+
+`ARIA-busy` state is used as part of a live region. To notify the live region `ARIA-live` property is used. `ARIA-live` have three possible values `ARIA-live=”off”`, `ARIA-live=”polite”` and `ARIA-live=”assertive”`.
+
+````
+<h2>Current Score</h2> 
+<p aria-live=”polite” aria-busy=”true”></p>
+````
+In the above example when the updation is done content authors should take care that the `ARIA-busy=”false”` and the updated content is available in the paragraph.
+
 
 * `aria-checked` (state)
 Indicates the current "checked" state of checkboxes, radio buttons, and other widgets. See related aria-pressed and aria-selected.
