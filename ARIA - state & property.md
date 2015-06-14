@@ -111,12 +111,16 @@ Sometimes, updates make sense on their own, such as a new line arriving in a cha
 </div>
 ````
 
-
-
-
-
 * `aria-autocomplete`
 Indicates whether user input completion suggestions are provided.
+An `aria-autocomplete` property is used when the suggestions of user input items are known. The values of the `aria-autocomplete` can be none, inline, list or both.
+
+`aria-autocomplete=”none”`: Default.
+`aria-autocomplete=”inline”`: When the options are available and the user can type few characters in the text field and retrieve the appropriate options.
+`aria-autocomplete=”list”`: Unlike the “inline” property user can only select an option from the list but will not be able to type in the text field.
+`aria-autocomplete=”both”`: Combination of inline and list.
+To intimate the user that the text fields are not just text fields use `aria-haspopup=”true”`. `Role=”combobox”` can also be used to provide an essence of a list items available along with the text field. Provide `aria-readonly=”true”` when author does not want the user to type in text field and only pick the option from the list available. It is used when the text field have `aria-autocomplete=”list”`. For `aria-autocomplete=”inline”`, `aria-autocomplete=”both”` and of course for `aria-autocomplete=”none”` aria-readonly should not be used or should be `aria-readonly=”false”`.
+`aria-autocomplete` property has good support with JAWS 14 on Internet explorer 9, latest browsers of Google Chrome and Firefox. With NVDA 2013.3 Google Chrome has good support while remaining two browsers have partial support.
 
 * `aria-busy` (state)
 Indicates whether an element, and its subtree, are currently being updated.
