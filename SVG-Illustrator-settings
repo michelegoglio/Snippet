@@ -1,0 +1,7 @@
+# settings à prendre en compte lors de l'enregistrement d'un SVG sous Illustrator
+
+## Suppression du gap blanc
+Lors de l'enregistrement du SVg sous Illustrator, il faut cocher la case "conserver les fonctions d'édition d'Illustrator"
+
+## éviter la déformation de l'image
+Modifier le code SVG généré par Illustrator en ajoutant le height et width de l'image
