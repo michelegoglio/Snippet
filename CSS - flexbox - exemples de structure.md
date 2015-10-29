@@ -1,4 +1,5 @@
-#html
+#1er exemple
+##html
 ````
 <div class="flexbox-parent">
     <div class="flexbox-item header">
@@ -19,9 +20,10 @@
         Footer
     </div>
 </div>
+
 ````
 
-#styles
+##styles
 ````
 *, *:before, *:after
 {
@@ -104,5 +106,89 @@ body
     
     /* Needed for when the area gets squished too far and there is content that can't be displayed */
     overflow: auto; 
+}
+````
+
+#2eme exemple (stretch)
+##HTML
+````
+<div class="wrapper">
+  <box1 class="box box1">
+    <top class="top">top</top>
+    <bottom class="bottom">
+    Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we
+    Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we   
+    Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we 
+    Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we Box 1. et wwerwer wer wer wer wer wer wer wer wer wer wer wer et wet wer wer wer wer we      
+    </bottom>
+  </box1>
+  <box2 class="box box2">
+    <top class="top">top</top>
+    <bottom class="bottom">
+      Box 2
+    </bottom>
+  </box2>
+  <box3 class="box box3">
+    <top class="top">top</top>
+    <bottom class="bottom"> 
+    Box 3
+   </bottom>
+  </box3>
+</div>
+````
+
+##CSS
+````
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;  
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.wrapper > * {
+  
+}
+
+.header {
+  background: tomato;
+}
+
+.footer {
+  background: lightgreen;
+}
+
+.box1 {
+  background: deepskyblue;
+}
+
+.box2 {
+  background: gold;
+}
+
+.box3 {
+  background: hotpink;
+}
+
+ .box { 
+  display:flex;
+  margin:0 10px;
+  flex: 1;
+  flex-flow: column;
+  align-content:stretch;
+  align-items:stretch;
+}
+
+.top{
+  flex:1;
+  align-self:stretch;
+}
+.bottom{
+  flex:2;
+  background-color:blue;
+  align-self:stretch;
 }
 ````
