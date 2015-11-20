@@ -1,13 +1,13 @@
 #CSS3 Multi-column Properties
 
-column-count
-column-gap
-column-rule-style
-column-rule-width
-column-rule-color
-column-rule
-column-span
-column-width
+* column-count
+* column-gap
+* column-rule-style
+* column-rule-width
+* column-rule-color
+* column-rule
+* column-span
+* column-width
 
 #CSS3 Create Multiple Columns
 
