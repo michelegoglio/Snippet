@@ -189,7 +189,7 @@ The column-rule-width property specifies the width of the rule between columns:
 </html>
 ````
 
-##FOR EXAMPLE:
+##EXAMPLE:
 ````
 <!DOCTYPE html>
     <html>
