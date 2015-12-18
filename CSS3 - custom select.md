@@ -1,3 +1,4 @@
+````
 <label>
   text label
   <select>
@@ -60,3 +61,4 @@ label:before {
   pointer-events: none;
   display: block;
 }
+````
