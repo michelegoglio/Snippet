@@ -115,21 +115,25 @@ size:" + args[0].iDelta;
 
 When the event fires, this function retrieves two parameters: the name of the event—textSizeChanged—and an array of arguments, the first of which is an object with the following properties:
 
-iBase
+`iBase`
 The initial value of the document when it was loaded.
-iDelta
+
+`iDelta`
 The difference between the last font size and the new font size.
-iSize
+
+`iSize`
 The new font size.
 All font sizes are in pixels.
 
-The TextResizeDetector object itself has three methods:
+The `TextResizeDetector` object itself has three methods:
 
-addEventListener()
+`addEventListener()`
 Registers your event handler and returns the base font size. If you pass an object as a second parameter, your handler function is executed in the scope of that object.
-stopDetector()
+
+`stopDetector()`
 Stops the detector.
-startDetector()
+
+`startDetector()`
 Starts the detector. This is only needed if the stopDetector() method has been executed beforehand.
 
 ##Possible Uses
