@@ -11,7 +11,7 @@ It is remarkably easy to detect changes in font size. All you need is JavaScript
 
 This is nothing new, and it has been used on some high-traffic web portals before. It becomes a lot more interesting, though, when you mix it with custom events. In essence, using a custom event means you get notified every time there is a change in font size.
 
-Check the demo page to see the effect in action. (Resize the font in your browser to get the notifications.)
+Check the [demo page](http://alistapart.com/d/fontresizing/fontResizeSwitchDemo.html) to see the effect in action. (Resize the font in your browser to get the notifications.)
 
 ##Using the text resize detector
 To implement this script, first embed it in the head of your document. (Line wraps marked » —Ed.)
